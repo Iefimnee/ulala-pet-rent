@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 优化 -->
+    <title>ULALA不動産 | ペット賃貸専門情報サイト | 京都宠物友好租房信息平台 - 即将上线</title>
+    <meta name="description" content="京都で犬や猫と暮らせる賃貸物件を簡単に検索。詳細なペット条件や周辺施設情報も充実。京都地区宠物可入住租房信息整合平台，提供详细宠物政策和周边设施信息。">
+    <meta name="keywords" content="京都,賃貸,ペット可,犬,猫,住まい,宠物,租房,宠物友好,京都租房,狗,猫">
+    
+    <!-- Open Graph (SNS分享) -->
+    <meta property="og:title" content="ULALA不動産 | ペット物件専門情報サイト">
+    <meta property="og:description" content="京都でペットと一緒に暮らせる賃貸・売買物件情報サイト - まもなく公開">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ulala.jp">
+    <meta property="og:image" content="https://ulala.jp/assets/images/og-image.jpg">
+    
+    <style>
+:root {
+    --primary: #6495ED; /* 矢车菊蓝 */
+    --primary-light: #6495ED; /* 稍亮的蓝色 */
+    --secondary: #E6F2FF; /* 浅蓝色背景 */
+    --dark: #333;
+    --darker: #1a1a1a;
+    --light: #fff;
+    --gray: #e0e0e0;
+    --gray-dark: #6b6b6b; /* 更柔和的深灰色 */
+    --shadow: 0 2px 10px rgba(0,0,0,0.05);
+    --shadow-light: 0 1px 3px rgba(0,0,0,0.03);
+    --border: #e0e0e0;
+}
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'M PLUS Rounded 1c', 'Kosugi Maru', 'Noto Sans JP', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+            font-weight: 400;
+            font-size: 15px;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'M PLUS Rounded 1c', 'Kosugi Maru', 'Noto Serif JP', serif;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+        
+        p {
+            margin-bottom: 1em;
+        }
+        
+        header {
+            background-color: var(--light);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 22px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo img {
+            height: 36px;
+            margin-right: 12px;
+        }
+        
+        .hero {
+            background-color: #f8f6f2; /* 更温暖的米色背景 */
+            padding: 100px 0 80px;
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        
+.launch-date {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+    /* 移除按钮样式 */
+    background-color: transparent;
+    padding: 0;
+    /* 添加下划线效果 */
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 4px;
+}
+
+        
+        .hero h2 {
+            font-size: 40px;
+            margin-bottom: 25px;
+            line-height: 1.4;
+            color: var(--darker);
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--gray-dark);
+            line-height: 1.8;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section.light {
+            background-color: var(--light);
+        }
+        
+        .section.dark {
+            background-color: #f8f6f2;
+        }
+        
+        .section-title {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+            color: var(--darker);
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .section-title p {
+            max-width: 600px;
+            margin: 20px auto 0;
+            color: var(--gray-dark);
+            font-size: 16px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--primary-light);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--light);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card:hover .feature-img img {
+            transform: scale(1.05);
+        }
+        
+        .feature-content {
+            padding: 30px 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .feature-content h3 {
+            margin-bottom: 15px;
+            color: var(--darker);
+            font-size: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        
+        .feature-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 1px;
+            background-color: var(--primary);
+        }
+        
+        .feature-content p {
+            color: var(--gray-dark);
+            line-height: 1.8;
+            margin-top: auto;
+            font-size: 15px;
+        }
+        
+        .user-profiles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .user-card {
+            background-color: var(--light);
+            box-shadow: var(--shadow-light);
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .user-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .user-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            background-color: var(--primary);
+        }
+        
+        .user-info h3 {
+            margin-bottom: 4px;
+            font-size: 18px;
+            color: var(--darker);
+        }
+        
+        .user-info p {
+            color: var(--gray-dark);
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        
+        .user-description {
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .user-problems {
+            margin-top: auto;
+        }
+        
+        .user-problems h4 {
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: var(--primary);
+        }
+        
+        .user-problems ul {
+            padding-left: 20px;
+            color: var(--gray-dark);
+        }
+        
+        .user-problems li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .newsletter {
+            background-color: var(--light);
+            color: var(--dark);
+            padding: 80px 0;
+            border-top: 1px solid var(--gray);
+            border-bottom: 1px solid var(--gray);
+        }
+        
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .newsletter-content h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--darker);
+        }
+        
+        .newsletter-content p {
+            margin-bottom: 30px;
+            color: var(--gray-dark);
+            font-size: 16px;
+        }
+        
+        .newsletter-form {
+    display: flex;
+    box-shadow: var(--shadow);
+    border-radius: 2px;
+    overflow: hidden;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid #c0c0c0; /* 为整个表单添加边框 */
+}
+        
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 15px 20px;
+    border: none;
+    border-right: 1px solid #e0e0e0; /* 仅保留右侧边框分隔输入框和按钮 */
+    font-size: 16px;
+    background-color: var(--light);
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    background-color: #f9f9f9; /* 轻微改变背景色而不是添加边框 */
+}
+
+        .newsletter-form button {
+            padding: 15px 30px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 15px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: var(--primary-light);
+        }
+        
+        .thank-you {
+            display: none;
+            text-align: center;
+            background-color: rgba(0,0,0,0.05);
+            padding: 25px;
+            border-radius: 2px;
+            margin-top: 25px;
+        }
+        
+        .thank-you h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .thank-you p {
+            color: var(--gray-dark);
+            margin-bottom: 0;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.1);
+            color: var(--dark);
+            margin: 0 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        footer {
+            background-color: var(--light);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid var(--gray);
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 18px;
+            color: var(--darker);
+            margin-bottom: 15px;
+            font-family: 'Noto Serif JP', serif;
+        }
+        
+        .contact-info {
+            margin-top: 15px;
+            font-size: 14px;
+            color: var(--gray-dark);
+        }
+        
+        .copyright {
+            margin-top: 15px;
+            font-size: 14px;
+            color: var(--gray-dark);
+        }
+        
+        @media (max-width: 992px) {
+            .features, .user-profiles {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero::before, .hero::after {
+                width: 55%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .features, .user-profiles {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input, .newsletter-form button {
+                width: 100%;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h2 {
+                font-size: 30px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+        }
+        
+       .feature-img {
+  height: 150px !important;
+  width: 150px !important;
+  margin: 0 auto 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important; /* 关键改动：允许图片溢出容器 */
+  background: none !important;
+  position: relative !important;
+}
+
+.feature-img img {
+  position: relative !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  transform: none !important;
+}
+
+/* 增加卡片内容的上边距，为图片腾出空间 */
+.feature-content {
+  padding-top: 30px !important;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <h1>
+                        <img src="assets/images/ulala-logo.png" alt="ULALA不動産 | ペット物件専門情報サイトのロゴ" height="40">
+                        ULALA不動産 | ペット物件専門情報サイト
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="launch-date">2025年6月上旬公開予定</span>
+                <h2>ここから見つかる、うちの子とうららか暮らし</h2>
+                <p>京都でペットと暮らせる賃貸・売買物件を簡単検索。詳細なペット条件や周辺施設情報も充実。ペットと一緒に理想の住まいを。</p>
+                <a href="#newsletter" class="cta-button">お知らせを受け取る</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section light">
+        <div class="container">
+            <div class="section-title">
+                <h2>当サイトのおすすめポイント</h2>
+                <p>ULALA不動産 | ペット物件専門情報サイトは、ペットと暮らす方のための物件サイトです。一般的な物件紹介にとどまらず、徹底した飼い主目線から、ペットとの暮らしそのものをサポートします。</p>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="assets/images/detailed-pet-policy.png" alt="詳細なペット条件">
+                    </div>
+                    <div class="feature-content">
+                        <h3>詳細なペット条件</h3>
+                        <p>大手サイトには載っていない詳細なペット条件（体型制限、種類、追加費用など）を確認できます。京都の物件情報を独自に収集し、ペットオーナーにとって重要な情報を提供します。</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="assets/images/pet-facilities.png" alt="周辺ペット施設情報">
+                    </div>
+                    <div class="feature-content">
+                        <h3>周辺ペット施設情報</h3>
+                        <p>物件周辺のドッグラン、動物病院、ペットショップなどの施設情報も一緒に確認できます。愛犬・愛猫との生活に便利な周辺環境を考慮した物件探しをサポートします。</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="assets/images/kyoto-service.png" alt="京都特化型サービス">
+                    </div>
+                    <div class="feature-content">
+                        <h3>京都特化型サービス</h3>
+                        <p>京都の地域特性やペット事情に詳しいスタッフが厳選した物件情報をお届けします。各地域の特性を考慮し、山科区・伏見区・右京区から順次、情報を拡充していきます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>こんな方におすすめです</h2>
+                <p>ペットと一緒に暮らす方々が抱える様々な課題を解決します。</p>
+            </div>
+            <div class="recommendations">
+                <!-- 犬を飼っている方向け -->
+                <div class="recommendation-group">
+                    <h3>愛犬と暮らす方</h3>
+                    <ul class="recommendation-list">
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">小型犬や中型犬可の物件を効率よく探したい方</span>
+                        </li>
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">ペット可物件の追加費用や条件を事前に確認したい方</span>
+                        </li>
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">周辺の散歩環境やドッグランなどの施設情報が欲しい方</span>
+                        </li>
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">愛犬の足洗い場など、ペット用設備のある物件を探している方</span>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- 猫を飼っている方向け -->
+                <div class="recommendation-group">
+                    <h3>愛猫と暮らす方</h3>
+                    <ul class="recommendation-list">
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">複数の猫と一緒に住める物件を探している方</span>
+                        </li>
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">猫の活動スペースが確保できる間取りを知りたい方</span>
+                        </li>
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">多頭飼いに対する敷金や保証金の条件を確認したい方</span>
+                        </li>
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">室内飼いに適した設備や環境の物件情報が欲しい方</span>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- 小動物を飼っている方向け -->
+                <div class="recommendation-group">
+                    <h3>小動物と暮らす方</h3>
+                    <ul class="recommendation-list">
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">ハムスター・ウサギ・フェレットなどの小動物可の物件を探している方</span>
+                        </li>
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">鳥類・爬虫類など特殊なペットとの暮らしに適した物件を探している方</span>
+                        </li>
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">小動物の飼育条件が明確に記載された物件情報が欲しい方</span>
+                        </li>
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">エキゾチックペット専門の動物病院が近い物件を探したい方</span>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- 共通の悩み -->
+                <div class="recommendation-group">
+                    <h3>共通のお悩み</h3>
+                    <ul class="recommendation-list">
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">物件探しに時間をかけたくない方</span>
+                        </li>
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">近隣の動物病院やペットショップの情報も一緒に知りたい方</span>
+                        </li>
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">京都ならではのペット事情を理解した上で物件を探したい方</span>
+                        </li>
+                        <li>
+                            <span class="check-mark">✓</span>
+                            <span class="recommendation-text">「ペット可」と書かれた物件の実際の条件を詳しく知りたい方</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+    .feature-img {
+    height: 200px;  /* 设置统一高度 */
+    overflow: hidden;  /* 溢出隐藏 */
+    display: flex;  /* 启用弹性布局 */
+    align-items: center;  /* 垂直居中 */
+    justify-content: center;  /* 水平居中 */
+}
+
+.feature-img img {
+    width: 100%;  /* 占满容器宽度 */
+    height: 100%;  /* 占满容器高度 */
+    object-fit: cover;  /* 保持比例裁剪适应 */
+    transition: transform 0.3s ease;  /* 添加平滑过渡效果 */
+}
+
+/* 可选：鼠标悬停效果 */
+.feature-img:hover img {
+    transform: scale(1.05);  /* 轻微放大效果 */
+}
+
+    /* こんな方におすすめですセクション用スタイル */
+    .recommendations {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+    
+    .recommendation-group {
+        background-color: var(--light);
+        box-shadow: var(--shadow-light);
+        padding: 30px;
+        height: 100%;
+    }
+    
+    .recommendation-group h3 {
+        margin-bottom: 20px;
+        color: var(--primary);
+        font-size: 20px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .recommendation-group h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 1px;
+        background-color: var(--primary);
+    }
+    
+    .recommendation-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .recommendation-list li {
+        margin-bottom: 16px;
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .check-mark {
+        color: var(--primary);
+        font-weight: bold;
+        margin-right: 10px;
+        font-size: 18px;
+    }
+    
+    .recommendation-text {
+        line-height: 1.6;
+        color: var(--gray-dark);
+    }
+    
+    @media (max-width: 992px) {
+        .recommendations {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .recommendations {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+
+    <section class="newsletter" id="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>サイト公開をお知らせします</h2>
+                <p>メールアドレスをご登録いただくと、サイト公開時にいち早くお知らせします。また、先行情報や限定物件情報もお届けします。</p>
+                
+                <form class="newsletter-form" id="subscription-form" name="newsletter-subscription" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="newsletter-subscription">
+                    <input type="email" name="email" placeholder="メールアドレスを入力" required>
+                    <button type="submit">登録する</button>
+                </form>
+                
+                <div class="thank-you" id="thank-you">
+                    <h3>ありがとうございます！</h3>
+                    <p>登録が完了しました。サイト公開時にご連絡いたします。</p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Twitter">X</a>
+                    <a href="#" class="social-link" aria-label="Facebook">FB</a>
+                    <a href="#" class="social-link" aria-label="Instagram">IG</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">ULALA不動産 | ペット物件専門情報サイト</div>
+                <div class="contact-info">
+                    <p>お問い合わせ：info@pet-rental-kyoto.jp</p>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 ULALA不動産 | ペット物件専門情報サイト All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 表单提交处理
+        const form = document.getElementById('subscription-form');
+const thankYou = document.getElementById('thank-you');
+
+if (form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(form);
+        
+        fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+            form.style.display = 'none';
+            thankYou.style.display = 'block';
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            // 考虑添加错误处理显示
+        });
+    });
+}
+
+        // Google Analytics 代码位置
+        // 将在实际部署时添加
+    </script>
+</body>
+</html>
