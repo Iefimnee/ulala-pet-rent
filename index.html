@@ -4,20 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2EZH1TRTK"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+    
+          gtag('config', 'G-N2EZH1TRTK');
+        </script>
+
     <!-- SEO 优化 -->
-    <title>ULALA不動産 | ペット賃貸専門情報サイト | 京都宠物友好租房信息平台 - 即将上线</title>
+    <title>ULALA不動産 | 京都ペットフレンドリー賃貸情報サイト</title>
     <meta name="description" content="京都で犬や猫と暮らせる賃貸物件を簡単に検索。詳細なペット条件や周辺施設情報も充実。京都地区宠物可入住租房信息整合平台，提供详细宠物政策和周边设施信息。">
     <meta name="keywords" content="京都,賃貸,ペット可,犬,猫,住まい,宠物,租房,宠物友好,京都租房,狗,猫">
     
     <!-- Open Graph (SNS分享) -->
-    <meta property="og:title" content="ULALA不動産 | ペットフレンドリー物件専門情報サイト">
+    <meta property="og:title" content="ULALA不動産 | ペットフレンドリー賃貸情報サイト">
     <meta property="og:description" content="京都でペットと一緒に暮らせる賃貸・売買物件情報サイト - まもなく公開">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ulala.jp">
     <meta property="og:image" content="https://ulala.jp/assets/images/og-image.jpg">
 
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <link rel="canonical" href="https://ulala.jp/" />
+    <link rel="icon" href="assets/images/favicon.ico">
+
     <style>
 :root {
     --primary: #6495ED; /* 矢车菊蓝 */
@@ -525,6 +537,53 @@
   transform: none !important;
 }
 
+.recommendations {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.recommendation-group {
+    background-color: var(--light);
+    box-shadow: var(--shadow-light);
+    padding: 30px;
+    height: 100%;
+}
+
+.recommendation-list {
+    list-style: none;
+    padding: 0;
+}
+
+.recommendation-list li {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.check-mark {
+    color: var(--primary);
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.recommendation-text {
+    line-height: 1.6;
+    color: var(--gray-dark);
+}
+
+@media (max-width: 992px) {
+    .recommendations {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .recommendations {
+        grid-template-columns: 1fr;
+    }
+}
 /* 增加卡片内容的上边距，为图片腾出空间 */
 .feature-content {
   padding-top: 30px !important;
@@ -537,7 +596,7 @@
             <div class="header-top">
                 <div class="logo">
                     <h1>
-                        <img src="assets/images/ulala-logo.png" alt="ULALA不動産 | ペットフレンドリー物件専門情報サイトのロゴ" height="40">
+                        <img src="assets/images/ulala-logo.png" alt="ULALA不動産ロゴ - ペットフレンドリー賃貸情報サイト　ペット可賃貸" height="40">
                         ULALA不動産 | ペットフレンドリー物件専門情報サイト
                     </h1>
                 </div>
@@ -548,7 +607,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="launch-date">2025年夏公開予定</span>
+                <span class="launch-date">2025年夏 公開予定</span>
                 <h2>ここから始まる<br>うちの子とうららか暮らし</h2>
                 <p>京都でペットと暮らせる賃貸・売買物件を簡単検索。詳細なペット条件や周辺施設情報も充実。ペットと一緒に理想の住まいを。</p>
                 <a href="#newsletter" class="cta-button">お知らせを受け取る</a>
@@ -559,13 +618,13 @@
     <section class="section light">
         <div class="container">
             <div class="section-title">
-                <h2>当サイトのおすすめポイント</h2>
-                <p>ULALA不動産は、ペットと暮らす方のための物件サイトです。基本的な物件紹介にとどまらず、徹底した飼い主目線から、ペットとの暮らしそのものをサポートします。</p>
+                <h2>サービス特徴</h2>
+                <p>ULALA不動産は、ペットと暮らす方のための物件情報提供サービスです。基本的な物件紹介にとどまらず、徹底した飼い主目線から、ペットとの暮らしそのものをサポートします。</p>
             </div>
             <div class="features">
                 <div class="feature-card">
                     <div class="feature-img">
-                        <img src="assets/images/detailed-pet-policy.png" alt="詳細なペット条件">
+                        <img src="assets/images/detailed-pet-policy.png" alt="京都　ペット可賃貸　詳細なペット条件">
                     </div>
                     <div class="feature-content">
                         <h3>詳細なペット条件</h3>
@@ -574,7 +633,7 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-img">
-                        <img src="assets/images/pet-facilities.png" alt="周辺ペット施設情報">
+                        <img src="assets/images/pet-facilities.png" alt="京都 ペット可賃貸 周辺ペット施設情報 動物病院 ドッグラン">
                     </div>
                     <div class="feature-content">
                         <h3>周辺ペット施設情報</h3>
@@ -583,7 +642,7 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-img">
-                        <img src="assets/images/kyoto-service.png" alt="京都特化型サービス">
+                        <img src="assets/images/kyoto-service.png" alt="京都特化型 ペット可物件 情報サービス 地域特性">
                     </div>
                     <div class="feature-content">
                         <h3>京都特化型サービス</h3>
@@ -653,7 +712,7 @@
                     <ul class="recommendation-list">
                         <li>
                             <span class="check-mark">✓</span>
-                            <span class="recommendation-text">ハムスター・ウサギ・フェレットなどの小動物可の物件を探している方</span>
+                            <span class="recommendation-text">ハムスター・ウサギ・モルモット・フェレットなどの小動物可の物件を探している方</span>
                         </li>
                         <li>
                             <span class="check-mark">✓</span>
@@ -695,95 +754,7 @@
             </div>
         </div>
     </section>
-    
-    <style>
-    .feature-img {
-    height: 200px;  /* 设置统一高度 */
-    overflow: hidden;  /* 溢出隐藏 */
-    display: flex;  /* 启用弹性布局 */
-    align-items: center;  /* 垂直居中 */
-    justify-content: center;  /* 水平居中 */
-}
 
-.feature-img img {
-    width: 100%;  /* 占满容器宽度 */
-    height: 100%;  /* 占满容器高度 */
-    object-fit: cover;  /* 保持比例裁剪适应 */
-    transition: transform 0.3s ease;  /* 添加平滑过渡效果 */
-}
-
-/* 可选：鼠标悬停效果 */
-.feature-img:hover img {
-    transform: scale(1.05);  /* 轻微放大效果 */
-}
-
-    /* こんな方におすすめですセクション用スタイル */
-    .recommendations {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 25px;
-    }
-    
-    .recommendation-group {
-        background-color: var(--light);
-        box-shadow: var(--shadow-light);
-        padding: 30px;
-        height: 100%;
-    }
-    
-    .recommendation-group h3 {
-        margin-bottom: 20px;
-        color: var(--primary);
-        font-size: 20px;
-        position: relative;
-        padding-bottom: 10px;
-    }
-    
-    .recommendation-group h3::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 30px;
-        height: 1px;
-        background-color: var(--primary);
-    }
-    
-    .recommendation-list {
-        list-style: none;
-        padding: 0;
-    }
-    
-    .recommendation-list li {
-        margin-bottom: 16px;
-        display: flex;
-        align-items: flex-start;
-    }
-    
-    .check-mark {
-        color: var(--primary);
-        font-weight: bold;
-        margin-right: 10px;
-        font-size: 18px;
-    }
-    
-    .recommendation-text {
-        line-height: 1.6;
-        color: var(--gray-dark);
-    }
-    
-    @media (max-width: 992px) {
-        .recommendations {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    
-    @media (max-width: 768px) {
-        .recommendations {
-            grid-template-columns: 1fr;
-        }
-    }
-    </style>
 
     <section class="newsletter" id="newsletter">
         <div class="container">
@@ -802,11 +773,12 @@
                     <p>登録が完了しました。サイト公開時にご連絡いたします。</p>
                 </div>
                 
-                <div class="social-links">
+                <div class="social-links" style="display: none;">
+                    <!-- SNSアカウント準備中 -->
                     <a href="#" class="social-link" aria-label="Twitter">X</a>
                     <a href="#" class="social-link" aria-label="Facebook">FB</a>
                     <a href="#" class="social-link" aria-label="Instagram">IG</a>
-                </div>
+                  </div>
             </div>
         </div>
     </section>
@@ -830,20 +802,32 @@
         // 修改您现有的脚本
 const form = document.getElementById('subscription-form');
 const thankYou = document.getElementById('thank-you');
+const validateEmail = (email) => {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+};
 
 if (form) {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const emailInput = form.querySelector('input[type="email"]');
-        const email = emailInput.value;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const emailInput = form.querySelector('input[type="email"]');
+    const email = emailInput.value;
+    
+    // 邮箱格式验证
+    if (!validateEmail(email)) {
+      alert('有効なメールアドレスを入力してください。');
+      return;
+    }
         
         // 检查本地存储中是否已有记录
-        if(localStorage.getItem('ulala_subscribed_emails') && 
-           localStorage.getItem('ulala_subscribed_emails').includes(email)) {
-            alert('このメールアドレスは既に登録されています。ありがとうございます！');
-            return;
-        }
+        if(localStorage.getItem('ulala_subscribed_emails')) {
+    const storedEmails = JSON.parse(localStorage.getItem('ulala_subscribed_emails'));
+    if(storedEmails.includes(email)) {
+        alert('このメールアドレスは既に登録されています。ありがとうございます！');
+        return;
+    }
+}
         
         const formData = new FormData(form);
         
@@ -870,8 +854,20 @@ if (form) {
     });
 }
 
-        // Google Analytics 代码位置
-        // 将在实际部署时添加
     </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ULALA不動産",
+          "url": "https://ulala.jp",
+          "description": "京都でペットと暮らせる賃貸物件を簡単検索。詳細なペット条件や周辺施設情報も充実。",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://ulala.jp/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+        </script>
 </body>
 </html>
