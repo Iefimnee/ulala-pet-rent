@@ -15,12 +15,12 @@
         </script>
 
     <!-- SEO 优化 -->
-    <title>ULALA不動産 | 京都ペットフレンドリー賃貸情報サイト</title>
-    <meta name="description" content="京都で犬や猫と暮らせる賃貸物件を簡単に検索。詳細なペット条件や周辺施設情報も充実。京都地区宠物可入住租房信息整合平台，提供详细宠物政策和周边设施信息。">
+    <title>ULALA | 京都ペットフレンドリー物件専門情報サイト</title>
+    <meta name="description" content="京都で犬や猫と暮らせる賃貸・売買物件を簡単に検索。詳細なペット入居条件や周辺施設情報も充実。京都地区宠物可入住租房信息整合平台，提供详细宠物政策和周边设施信息。">
     <meta name="keywords" content="京都,賃貸,ペット可,犬,猫,住まい,宠物,租房,宠物友好,京都租房,狗,猫">
     
     <!-- Open Graph (SNS分享) -->
-    <meta property="og:title" content="ULALA不動産 | ペットフレンドリー賃貸情報サイト">
+    <meta property="og:title" content="ULALA | ペットフレンドリー物件専門情報サイト">
     <meta property="og:description" content="京都でペットと一緒に暮らせる賃貸・売買物件情報サイト - まもなく公開">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ulala.jp">
@@ -550,13 +550,19 @@
     height: 100%;
 }
 
+
 .recommendation-list {
     list-style: none;
     padding: 0;
 }
 
+
+.recommendation-group h3 {
+    margin-bottom: 12px; /* 增加标题与列表之间的间距 */
+}
+
 .recommendation-list li {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     display: flex;
     align-items: flex-start;
 }
@@ -588,6 +594,42 @@
 .feature-content {
   padding-top: 30px !important;
 }
+
+.hero-message {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.message-item {
+  position: relative;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  color: var(--gray-dark);
+  padding-left: 22px;  /* 为符号留出空间 */
+  display: inline-block;
+  text-align: left;
+}
+
+.message-item:before {
+  content: '▪';  /* 可以替换为其他符号，如 '◦', '○', '▪', '❧', etc. */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary);  /* 使用主题色 */
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .slogan-line {
+    font-size: 16px;
+  }
+  
+  .slogan-line:nth-child(2) {
+    padding: 6px 10px;
+  }
+}
     </style>
 </head>
 <body>
@@ -596,8 +638,8 @@
             <div class="header-top">
                 <div class="logo">
                     <h1>
-                        <img src="assets/images/ulala-logo.png" alt="ULALA不動産ロゴ - ペットフレンドリー賃貸情報サイト　ペット可賃貸" height="40">
-                        ULALA不動産 | ペットフレンドリー物件専門情報サイト
+                        <img src="assets/images/ulala-logo.png" alt="ULALAロゴ - ペットフレンドリー賃貸情報サイト　ペット可賃貸" height="40">
+                        ULALA | ペットフレンドリー物件専門情報サイト
                     </h1>
                 </div>
             </div>
@@ -609,7 +651,13 @@
             <div class="hero-content">
                 <span class="launch-date">2025年夏 公開予定</span>
                 <h2>ここから始まる<br>うちの子とうららか暮らし</h2>
-                <p>京都でペットと暮らせる賃貸・売買物件を簡単検索。詳細なペット条件や周辺施設情報も充実。ペットと一緒に理想の住まいを。</p>
+                
+                <div class="hero-message">
+                    <p class="message-item">京都でペットと暮らせる賃貸・売買物件を簡単検索　</p>
+                    <p class="message-item">詳細なペット入居条件や周辺施設情報も充実　</p>
+                    <p class="message-item">ペットと一緒に理想の住まいを　</p>
+                  </div>
+
                 <a href="#newsletter" class="cta-button">お知らせを受け取る</a>
             </div>
         </div>
@@ -619,16 +667,16 @@
         <div class="container">
             <div class="section-title">
                 <h2>サービス特徴</h2>
-                <p>ULALA不動産は、ペットと暮らす方のための物件情報提供サービスです。基本的な物件紹介にとどまらず、徹底した飼い主目線から、ペットとの暮らしそのものをサポートします。</p>
+                <p>ULALAは、ペットと暮らす方のための物件情報提供サービスです。基本的な物件紹介にとどまらず、徹底した飼い主目線から、ペットとの暮らしそのものをサポートします。</p>
             </div>
             <div class="features">
                 <div class="feature-card">
                     <div class="feature-img">
-                        <img src="assets/images/detailed-pet-policy.png" alt="京都　ペット可賃貸　詳細なペット条件">
+                        <img src="assets/images/detailed-pet-policy.png" alt="京都　ペット可賃貸　詳細なペット入居条件">
                     </div>
                     <div class="feature-content">
-                        <h3>詳細なペット条件</h3>
-                        <p>大手サイトには載っていない詳細なペット条件（体型制限、種類、追加費用など）を確認できます。京都の物件情報を独自に収集し、ペットオーナーにとって重要な情報を提供します。</p>
+                        <h3>詳細なペット入居条件</h3>
+                        <p>大手サイトには載っていない詳細なペット入居条件（体型制限、種類、追加費用など）を確認できます。京都の物件情報を独自に収集し、ペットオーナーにとって重要な情報を提供します。</p>
                     </div>
                 </div>
                 <div class="feature-card">
@@ -777,97 +825,4 @@
                     <!-- SNSアカウント準備中 -->
                     <a href="#" class="social-link" aria-label="Twitter">X</a>
                     <a href="#" class="social-link" aria-label="Facebook">FB</a>
-                    <a href="#" class="social-link" aria-label="Instagram">IG</a>
-                  </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">ULALA不動産 | ペットフレンドリー物件専門情報サイト</div>
-                <div class="contact-info">
-                    <p>お問い合わせ：ulalaanimal@gmail.com</p>
-                </div>
-                <div class="copyright">
-                    <p>&copy; 2025 ULALA不動産 | ペットフレンドリー物件専門情報サイト All Rights Reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // 表单提交处理
-        // 修改您现有的脚本
-const form = document.getElementById('subscription-form');
-const thankYou = document.getElementById('thank-you');
-const validateEmail = (email) => {
-  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-};
-
-if (form) {
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const emailInput = form.querySelector('input[type="email"]');
-    const email = emailInput.value;
-    
-    // 邮箱格式验证
-    if (!validateEmail(email)) {
-      alert('有効なメールアドレスを入力してください。');
-      return;
-    }
-        
-        // 检查本地存储中是否已有记录
-        if(localStorage.getItem('ulala_subscribed_emails')) {
-    const storedEmails = JSON.parse(localStorage.getItem('ulala_subscribed_emails'));
-    if(storedEmails.includes(email)) {
-        alert('このメールアドレスは既に登録されています。ありがとうございます！');
-        return;
-    }
-}
-        
-        const formData = new FormData(form);
-        
-        fetch('/', {
-            method: 'POST',
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
-        })
-        .then(() => {
-            // 保存邮箱到本地存储
-            let emails = localStorage.getItem('ulala_subscribed_emails') 
-                ? JSON.parse(localStorage.getItem('ulala_subscribed_emails')) 
-                : [];
-            emails.push(email);
-            localStorage.setItem('ulala_subscribed_emails', JSON.stringify(emails));
-            
-            // 显示感谢信息
-            form.style.display = 'none';
-            thankYou.style.display = 'block';
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-    });
-}
-
-    </script>
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "ULALA不動産",
-          "url": "https://ulala.jp",
-          "description": "京都でペットと暮らせる賃貸物件を簡単検索。詳細なペット条件や周辺施設情報も充実。",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://ulala.jp/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        }
-        </script>
-</body>
-</html>
+                    <a href="#"
