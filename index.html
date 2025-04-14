@@ -4,698 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2EZH1TRTK"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-    
-          gtag('config', 'G-N2EZH1TRTK');
-        </script>
-
     <!-- SEO 优化 -->
     <title>京都 ペット可賃貸売買物件情報サイト | 小動物犬猫等ペットOK物件専門 ULALA不動産</title>
     <meta name="description" content="京都でペットと暮らせる賃貸物件を独自調査。一般サイトには載らない詳細なペット条件（犬猫の体型・数・追加費用）や周辺ペット施設情報も掲載。理想のペットライフをサポートする京都特化型賃貸情報サイト。京都地区宠物可入住租房信息整合平台，提供详细宠物政策和周边设施信息。">
     <meta name="keywords" content="京都,賃貸,ペット可,犬,猫,住まい,宠物,租房,宠物友好,京都租房,狗,猫,犬可,猫可,ペットと暮らす,山科区,伏見区,右京区,マンション,アパート">
-    
-    <html lang="ja">
     <meta http-equiv="content-language" content="ja">
 
     <!-- Open Graph (SNS分享) -->
     <meta property="og:title" content="ULALA | ペットフレンドリー物件専門情報サイト">
-    <meta property="og:description" content="京都でペットと暮らせる賃貸売買物件専門サイト。詳細なペット条件と周辺施設情報で理想の住まい探しをサポート。">
+    <meta property="og:description" content="京都のペット可物件専門サイト。詳細なペット入居条件と周辺施設情報で、ペットとの理想の暮らしを実現します。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ulala.jp">
     <meta property="og:image" content="https://ulala.jp/assets/images/og-image.jpg">
     <meta property="og:site_name" content="ULALA不動産">
 
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 优化字体加载 - 只加载使用的400和500字重 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&display=swap" rel="stylesheet">
+    
     <link rel="canonical" href="https://ulala.jp/" />
     <link rel="icon" href="assets/images/favicon.ico">
 
+    <!-- 关键CSS内联，确保页面快速渲染 -->
     <style>
-:root {
-    --primary: #6495ED; /* 矢车菊蓝 */
-    --primary-light: #6495ED; /* 稍亮的蓝色 */
-    --secondary: #E6F2FF; /* 浅蓝色背景 */
-    --dark: #333;
-    --darker: #1a1a1a;
-    --light: #fff;
-    --gray: #e0e0e0;
-    --gray-dark: #6b6b6b; /* 更柔和的深灰色 */
-    --shadow: 0 2px 10px rgba(0,0,0,0.05);
-    --shadow-light: 0 1px 3px rgba(0,0,0,0.03);
-    --border: #e0e0e0;
-}
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'M PLUS Rounded 1c', 'Kosugi Maru', 'Noto Sans JP', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.7;
-            font-weight: 400;
-            font-size: 15px;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'M PLUS Rounded 1c', 'Kosugi Maru', 'Noto Serif JP', serif;
-            font-weight: 500;
-            line-height: 1.3;
-        }
-        
-        p {
-            margin-bottom: 1em;
-        }
-        
-        header {
-            background-color: var(--light);
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        
-        .container {
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo h1 {
-            font-size: 22px;
-            color: var(--dark);
-            display: flex;
-            align-items: center;
-            letter-spacing: 0.5px;
-        }
-        
-        .logo img {
-            height: 36px;
-            margin-right: 12px;
-        }
-        
-        .hero {
-            background-color: #f8f6f2; /* 更温暖的米色背景 */
-            padding: 100px 0 80px;
-            margin-top: 80px;
-            text-align: center;
-        }
-        
-        .hero-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        
-.launch-date {
-    display: inline-block;
-    color: var(--primary);
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 25px;
-    letter-spacing: 0.5px;
-    /* 移除按钮样式 */
-    background-color: transparent;
-    padding: 0;
-    /* 添加下划线效果 */
-    border-bottom: 2px solid var(--primary);
-    padding-bottom: 4px;
-}
-
-        
-        .hero h2 {
-            font-size: 40px;
-            margin-bottom: 25px;
-            line-height: 1.4;
-            color: var(--darker);
-        }
-        
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            color: var(--gray-dark);
-            line-height: 1.8;
-        }
-        
-        .section {
-            padding: 100px 0;
-        }
-        
-        .section.light {
-            background-color: var(--light);
-        }
-        
-        .section.dark {
-            background-color: #f8f6f2;
-        }
-        
-        .section-title {
-            margin-bottom: 60px;
-            text-align: center;
-        }
-        
-        .section-title h2 {
-            font-size: 32px;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-            color: var(--darker);
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 2px;
-            background-color: var(--primary);
-        }
-        
-        .section-title p {
-            max-width: 600px;
-            margin: 20px auto 0;
-            color: var(--gray-dark);
-            font-size: 16px;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary);
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
-        }
-        
-        .cta-button:hover {
-            background-color: var(--primary-light);
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .feature-card {
-            background-color: var(--light);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-card:hover .feature-img img {
-            transform: scale(1.05);
-        }
-        
-        .feature-content {
-            padding: 30px 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .feature-content h3 {
-            margin-bottom: 15px;
-            color: var(--darker);
-            font-size: 20px;
-            position: relative;
-            padding-bottom: 12px;
-        }
-        
-        .feature-content h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 30px;
-            height: 1px;
-            background-color: var(--primary);
-        }
-        
-        .feature-content p {
-            color: var(--gray-dark);
-            line-height: 1.8;
-            margin-top: auto;
-            font-size: 15px;
-        }
-        
-        .user-profiles {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .user-card {
-            background-color: var(--light);
-            box-shadow: var(--shadow-light);
-            padding: 30px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .user-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .user-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: white;
-            background-color: var(--primary);
-        }
-        
-        .user-info h3 {
-            margin-bottom: 4px;
-            font-size: 18px;
-            color: var(--darker);
-        }
-        
-        .user-info p {
-            color: var(--gray-dark);
-            font-size: 14px;
-            margin-bottom: 0;
-        }
-        
-        .user-description {
-            color: var(--dark);
-            margin-bottom: 15px;
-        }
-        
-        .user-problems {
-            margin-top: auto;
-        }
-        
-        .user-problems h4 {
-            margin-bottom: 12px;
-            font-size: 16px;
-            color: var(--primary);
-        }
-        
-        .user-problems ul {
-            padding-left: 20px;
-            color: var(--gray-dark);
-        }
-        
-        .user-problems li {
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-        
-        .newsletter {
-            background-color: var(--light);
-            color: var(--dark);
-            padding: 80px 0;
-            border-top: 1px solid var(--gray);
-            border-bottom: 1px solid var(--gray);
-        }
-        
-        .newsletter-content {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .newsletter-content h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: var(--darker);
-        }
-        
-        .newsletter-content p {
-            margin-bottom: 30px;
-            color: var(--gray-dark);
-            font-size: 16px;
-        }
-        
-        .newsletter-form {
-    display: flex;
-    box-shadow: var(--shadow);
-    border-radius: 2px;
-    overflow: hidden;
-    max-width: 500px;
-    margin: 0 auto;
-    border: 1px solid #c0c0c0; /* 为整个表单添加边框 */
-}
-        
-.newsletter-form input {
-    flex-grow: 1;
-    padding: 15px 20px;
-    border: none;
-    border-right: 1px solid #e0e0e0; /* 仅保留右侧边框分隔输入框和按钮 */
-    font-size: 16px;
-    background-color: var(--light);
-}
-
-.newsletter-form input:focus {
-    outline: none;
-    background-color: #f9f9f9; /* 轻微改变背景色而不是添加边框 */
-}
-
-        .newsletter-form button {
-            padding: 15px 30px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 15px;
-            transition: background-color 0.3s ease;
-        }
-        
-        .newsletter-form button:hover {
-            background-color: var(--primary-light);
-        }
-        
-        .thank-you {
-            display: none;
-            text-align: center;
-            background-color: rgba(0,0,0,0.05);
-            padding: 25px;
-            border-radius: 2px;
-            margin-top: 25px;
-        }
-        
-        .thank-you h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        
-        .thank-you p {
-            color: var(--gray-dark);
-            margin-bottom: 0;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(0,0,0,0.1);
-            color: var(--dark);
-            margin: 0 8px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        
-        .social-link:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        footer {
-            background-color: var(--light);
-            padding: 30px 0;
-            text-align: center;
-            border-top: 1px solid var(--gray);
-        }
-        
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .footer-logo {
-            font-size: 18px;
-            color: var(--darker);
-            margin-bottom: 15px;
-            font-family: 'Noto Serif JP', serif;
-        }
-        
-        .contact-info {
-            margin-top: 15px;
-            font-size: 14px;
-            color: var(--gray-dark);
-        }
-        
-        .copyright {
-            margin-top: 15px;
-            font-size: 14px;
-            color: var(--gray-dark);
-        }
-        
-        @media (max-width: 992px) {
-            .features, .user-profiles {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .hero::before, .hero::after {
-                width: 55%;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .features, .user-profiles {
-                grid-template-columns: 1fr;
-            }
-            
-            .newsletter-form {
-                flex-direction: column;
-            }
-            
-            .newsletter-form input, .newsletter-form button {
-                width: 100%;
-            }
-            
-            .hero {
-                padding: 60px 0;
-            }
-            
-            .hero h2 {
-                font-size: 30px;
-            }
-            
-            .section {
-                padding: 70px 0;
-            }
-        }
-        
-       .feature-img {
-  height: 150px !important;
-  width: 150px !important;
-  margin: 0 auto 20px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  overflow: visible !important; /* 关键改动：允许图片溢出容器 */
-  background: none !important;
-  position: relative !important;
-}
-
-.feature-img img {
-  position: relative !important;
-  width: auto !important;
-  height: auto !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  object-fit: contain !important;
-  transform: none !important;
-}
-
-.recommendations {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
-
-.recommendation-group {
-    background-color: var(--light);
-    box-shadow: var(--shadow-light);
-    padding: 30px;
-    height: 100%;
-}
-
-
-.recommendation-list {
-    list-style: none;
-    padding: 0;
-}
-
-
-.recommendation-group h3 {
-    margin-bottom: 12px; /* 增加标题与列表之间的间距 */
-}
-
-.recommendation-list li {
-    margin-bottom: 12px;
-    display: flex;
-    align-items: flex-start;
-}
-
-.check-mark {
-    color: var(--primary);
-    font-weight: bold;
-    margin-right: 10px;
-    font-size: 18px;
-}
-
-.recommendation-text {
-    line-height: 1.6;
-    color: var(--gray-dark);
-}
-
-@media (max-width: 992px) {
-    .recommendations {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .recommendations {
-        grid-template-columns: 1fr;
-    }
-}
-/* 增加卡片内容的上边距，为图片腾出空间 */
-.feature-content {
-  padding-top: 30px !important;
-}
-
-/* 在现有样式表中添加或修改以下样式 */
-
-.hero-message {
-    max-width: 700px;
-    margin: 0 auto 30px; /* 使用auto左右边距实现整体居中 */
-}
-
-.feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left; /* 列表项内容左对齐 */
-    display: inline-block; /* 这是关键 - 使列表宽度适应内容 */
-    margin: 0 auto; /* 可选，进一步确保居中 */
-}
-
-/* 其他样式保持不变 */
-.feature-item {
-    margin-bottom: 12px;
-    display: flex;
-    align-items: flex-start;
-    text-align: left; /* 确保文本左对齐 */
-}
-
-.feature-item:last-child {
-    margin-bottom: 0;
-}
-
-.check-icon {
-    color: #6495ED; /* 使用网站主色调蓝色 */
-    font-size: 18px;
-    margin-right: 15px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    min-width: 20px; /* 确保所有图标对齐 */
-}
-
-.feature-text {
-    font-size: 18px;
-    color: var(--gray-dark);
-    line-height: 1.4;
-}
-
-/* 为小屏幕设备调整样式 */
-@media (max-width: 768px) {
-    .feature-text {
-        font-size: 16px;
-    }
-    
-    .check-icon {
-        font-size: 16px;
-        margin-right: 10px;
-    }
-    
-    .feature-item {
-        margin-bottom: 10px;
-    }
-}
-
-@media (max-width: 768px) {
-  .slogan-line {
-    font-size: 16px;
-  }
-  
-  .slogan-line:nth-child(2) {
-    padding: 6px 10px;
-  }
-}
+:root{--primary:#6495ED;--primary-light:#6495ED;--secondary:#E6F2FF;--dark:#333;--darker:#1a1a1a;--light:#fff;--gray:#e0e0e0;--gray-dark:#6b6b6b;--shadow:0 2px 10px rgba(0,0,0,0.05);--shadow-light:0 1px 3px rgba(0,0,0,0.03);--border:#e0e0e0}*{margin:0;padding:0;box-sizing:border-box;font-family:'M PLUS Rounded 1c','Kosugi Maru','Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased}body{background-color:var(--light);color:var(--dark);line-height:1.7;font-weight:400;font-size:15px}h1,h2,h3,h4,h5,h6{font-family:'M PLUS Rounded 1c','Kosugi Maru','Noto Serif JP',serif;font-weight:500;line-height:1.3}p{margin-bottom:1em}header{background-color:var(--light);padding:15px 0;position:fixed;width:100%;top:0;z-index:1000;border-bottom:1px solid rgba(0,0,0,0.05)}.container{max-width:1240px;margin:0 auto;padding:0 20px}.header-top{display:flex;justify-content:space-between;align-items:center}.logo{display:flex;align-items:center}.logo h1{font-size:22px;color:var(--dark);display:flex;align-items:center;letter-spacing:0.5px}.logo img{height:36px;margin-right:12px;width:auto}.hero{background-color:#f8f6f2;padding:100px 0 80px;margin-top:80px;text-align:center}.hero-content{max-width:700px;margin:0 auto}.launch-date{display:inline-block;color:var(--primary);font-size:16px;font-weight:500;margin-bottom:25px;letter-spacing:0.5px;background-color:transparent;padding:0;border-bottom:2px solid var(--primary);padding-bottom:4px}.hero h2{font-size:40px;margin-bottom:25px;line-height:1.4;color:var(--darker)}.hero p{font-size:18px;margin-bottom:30px;color:var(--gray-dark);line-height:1.8}.hero-message{max-width:700px;margin:0 auto 30px}.feature-list{list-style:none;padding:0;margin:0;text-align:left;display:inline-block;margin:0 auto}.feature-item{margin-bottom:12px;display:flex;align-items:flex-start;text-align:left}.feature-item:last-child{margin-bottom:0}.check-icon{color:#6495ED;font-size:18px;margin-right:15px;display:inline-flex;align-items:center;justify-content:center;font-weight:500;min-width:20px}.feature-text{font-size:18px;color:var(--gray-dark);line-height:1.4}.cta-button{display:inline-block;padding:12px 30px;background-color:var(--primary);color:white;text-decoration:none;font-weight:500;font-size:16px;transition:background-color 0.3s ease;margin-top:20px}.cta-button:hover{background-color:var(--primary-light)}
     </style>
+    
+    <!-- 非关键CSS延迟加载 -->
+    <link rel="stylesheet" href="assets/css/main.css" media="print" onload="this.media='all'">
+    
+    <!-- 结构化数据 -->
     <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "RealEstateAgent",
-          "name": "ULALA不動産",
-          "description": "京都でペットと暮らせる賃貸売買物件を専門に扱うポータルサイト",
-          "url": "https://ulala.jp",
-          "email": "ulalaanimal@gmail.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "京都市",
-            "addressRegion": "京都府",
-            "addressCountry": "JP"
-          },
-          "specialty": "ペットフレンドリー物件",
-          "areaServed": {
-            "@type": "City",
-            "name": "京都市"
-          },
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://ulala.jp/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        }
-        </script>
+    {"@context":"https://schema.org","@type":"RealEstateAgent","name":"ULALA不動産","description":"京都でペットと暮らせる賃貸売買物件を専門に扱うポータルサイト","url":"https://ulala.jp","email":"ulalaanimal@gmail.com","address":{"@type":"PostalAddress","addressLocality":"京都市","addressRegion":"京都府","addressCountry":"JP"},"specialty":"ペットフレンドリー物件","areaServed":{"@type":"City","name":"京都市"},"potentialAction":{"@type":"SearchAction","target":"https://ulala.jp/search?q={search_term_string}","query-input":"required name=search_term_string"}}
+    </script>
 </head>
 <body>
     <header>
@@ -703,7 +46,7 @@
             <div class="header-top">
                 <div class="logo">
                     <h1>
-                        <img src="assets/images/ulala-logo.png" alt="ULALAロゴ - ペットフレンドリー賃貸情報サイト　ペット可賃貸" height="40">
+                        <img src="assets/images/ulala-logo.png" alt="ULALAロゴ" width="36" height="36">
                         ULALA | ペットフレンドリー物件専門情報サイト
                     </h1>
                 </div>
@@ -721,11 +64,11 @@
                     <ul class="feature-list">
                         <li class="feature-item">
                             <span class="check-icon">✓</span>
-                            <span class="feature-text">京都でペットと暮らせる賃貸・売買物件を簡単検索</span>
+                            <span class="feature-text">京都でペットと暮らせる賃貸物件を簡単検索</span>
                         </li>
                         <li class="feature-item">
                             <span class="check-icon">✓</span>
-                            <span class="feature-text">詳細なペット入居条件や周辺施設情報も充実</span>
+                            <span class="feature-text">詳細なペット入居条件や周辺施設情報も完備</span>
                         </li>
                         <li class="feature-item">
                             <span class="check-icon">✓</span>
@@ -748,7 +91,7 @@
             <div class="features">
                 <div class="feature-card">
                     <div class="feature-img">
-                        <img src="assets/images/detailed-pet-policy.png" alt="京都　ペット可賃貸　詳細なペット入居条件">
+                        <img src="assets/images/detailed-pet-policy.png" width="150" height="150" loading="lazy" alt="詳細なペット入居条件">
                     </div>
                     <div class="feature-content">
                         <h3>詳細なペット入居条件</h3>
@@ -757,7 +100,7 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-img">
-                        <img src="assets/images/pet-facilities.png" alt="京都 ペット可賃貸 周辺ペット施設情報 動物病院 ドッグラン">
+                        <img src="assets/images/pet-facilities.png" width="150" height="150" loading="lazy" alt="周辺ペット施設情報">
                     </div>
                     <div class="feature-content">
                         <h3>周辺ペット施設情報</h3>
@@ -766,7 +109,7 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-img">
-                        <img src="assets/images/kyoto-service.png" alt="読んで楽しむサイト ペット可物件 物件情報サービス">
+                        <img src="assets/images/kyoto-service.png" width="150" height="150" loading="lazy" alt="読んで楽しむサイト">
                     </div>
                     <div class="feature-content">
                         <h3>読んで楽しむサイト</h3>
@@ -836,7 +179,7 @@
                     <ul class="recommendation-list">
                         <li>
                             <span class="check-mark">✓</span>
-                            <span class="recommendation-text">ハムスター・ウサギ・モルモット・フェレットなどの小動物可の物件を探している方</span>
+                            <span class="recommendation-text">ハムスター・ウサギなどの小動物可の物件を探している方</span>
                         </li>
                         <li>
                             <span class="check-mark">✓</span>
@@ -879,7 +222,6 @@
         </div>
     </section>
 
-
     <section class="newsletter" id="newsletter">
         <div class="container">
             <div class="newsletter-content">
@@ -896,9 +238,77 @@
                     <h3>ありがとうございます！</h3>
                     <p>登録が完了しました。サイト公開時にご連絡いたします。</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">ULALA不動産</div>
+                <div class="contact-info">
+                    <p>メール：ulalaanimal@gmail.com</p>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 ULALA不動産 All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 创建外部CSS文件 -->
+    <style id="main-css">
+.section{padding:100px 0}.section.light{background-color:var(--light)}.section.dark{background-color:#f8f6f2}.section-title{margin-bottom:60px;text-align:center}.section-title h2{font-size:32px;position:relative;display:inline-block;padding-bottom:15px;color:var(--darker)}.section-title h2::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:40px;height:2px;background-color:var(--primary)}.section-title p{max-width:600px;margin:20px auto 0;color:var(--gray-dark);font-size:16px}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}.feature-card{background-color:var(--light);overflow:hidden;transition:transform 0.3s ease;height:100%;display:flex;flex-direction:column}.feature-card:hover{transform:translateY(-5px)}.feature-content{padding:30px 25px;flex-grow:1;display:flex;flex-direction:column;padding-top:30px!important}.feature-content h3{margin-bottom:15px;color:var(--darker);font-size:20px;position:relative;padding-bottom:12px}.feature-content h3::after{content:'';position:absolute;bottom:0;left:0;width:30px;height:1px;background-color:var(--primary)}.feature-content p{color:var(--gray-dark);line-height:1.8;margin-top:auto;font-size:15px}.feature-img{height:150px!important;width:150px!important;margin:0 auto 20px!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:visible!important;background:none!important;position:relative!important}.feature-img img{position:relative!important;width:auto!important;height:auto!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;transform:none!important}.recommendations{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}.recommendation-group{background-color:var(--light);box-shadow:var(--shadow-light);padding:30px;height:100%}.recommendation-list{list-style:none;padding:0}.recommendation-group h3{margin-bottom:12px}.recommendation-list li{margin-bottom:12px;display:flex;align-items:flex-start}.check-mark{color:var(--primary);font-weight:500;margin-right:10px;font-size:18px}.recommendation-text{line-height:1.6;color:var(--gray-dark)}.newsletter{background-color:var(--light);color:var(--dark);padding:80px 0;border-top:1px solid var(--gray);border-bottom:1px solid var(--gray)}.newsletter-content{max-width:600px;margin:0 auto;text-align:center}.newsletter-content h2{font-size:28px;margin-bottom:20px;color:var(--darker)}.newsletter-content p{margin-bottom:30px;color:var(--gray-dark);font-size:16px}.newsletter-form{display:flex;box-shadow:var(--shadow);border-radius:2px;overflow:hidden;max-width:500px;margin:0 auto;border:1px solid #c0c0c0}.newsletter-form input{flex-grow:1;padding:15px 20px;border:none;border-right:1px solid #e0e0e0;font-size:16px;background-color:var(--light)}.newsletter-form input:focus{outline:none;background-color:#f9f9f9}.newsletter-form button{padding:15px 30px;background-color:var(--primary);color:white;border:none;cursor:pointer;font-weight:500;font-size:15px;transition:background-color 0.3s ease}.newsletter-form button:hover{background-color:var(--primary-light)}.thank-you{display:none;text-align:center;background-color:rgba(0,0,0,0.05);padding:25px;border-radius:2px;margin-top:25px}.thank-you h3{color:var(--primary);margin-bottom:10px}.thank-you p{color:var(--gray-dark);margin-bottom:0}footer{background-color:var(--light);padding:30px 0;text-align:center;border-top:1px solid var(--gray)}.footer-content{max-width:600px;margin:0 auto}.footer-logo{font-size:18px;color:var(--darker);margin-bottom:15px;font-family:'Noto Serif JP',serif}.contact-info{margin-top:15px;font-size:14px;color:var(--gray-dark)}.copyright{margin-top:15px;font-size:14px;color:var(--gray-dark)}@media (max-width:992px){.features,.user-profiles,.recommendations{grid-template-columns:repeat(2,1fr)}}@media (max-width:768px){.features,.user-profiles,.recommendations{grid-template-columns:1fr}.newsletter-form{flex-direction:column}.newsletter-form input,.newsletter-form button{width:100%}.hero{padding:60px 0}.hero h2{font-size:30px}.section{padding:70px 0}.feature-text{font-size:16px}.check-icon{font-size:16px;margin-right:10px}.feature-item{margin-bottom:10px}.slogan-line{font-size:16px}.slogan-line:nth-child(2){padding:6px 10px}}
+    </style>
+
+    <!-- 延迟加载Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2EZH1TRTK"></script>
+    <script>
+    window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N2EZH1TRTK');
+    });
+    </script>
+
+    <!-- 表单提交处理 -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('subscription-form');
+        var thankYou = document.getElementById('thank-you');
+        
+        if(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // 简单的表单验证
+                var email = form.querySelector('input[type="email"]').value;
+                if(!email || !email.includes('@')) {
+                    alert('有効なメールアドレスを入力してください。');
+                    return;
+                }
                 
-                <div class="social-links" style="display: none;">
-                    <!-- SNSアカウント準備中 -->
-                    <a href="#" class="social-link" aria-label="Twitter">X</a>
-                    <a href="#" class="social-link" aria-label="Facebook">FB</a>
-                    <a href="#"
+                // 正常情况下提交表单
+                var formData = new FormData(form);
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(function(response) {
+                    if(response.ok) {
+                        form.style.display = 'none';
+                        thankYou.style.display = 'block';
+                    } else {
+                        throw new Error('Network response was not ok.');
+                    }
+                })
+                .catch(function(error) {
+                    console.error('Error:', error);
+                    alert('エラーが発生しました。後でもう一度お試しください。');
+                });
+            });
+        }
+    });
+    </script>
+</body>
+</html>
