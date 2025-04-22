@@ -30,6 +30,52 @@
     <!-- 关键CSS内联，确保页面快速渲染 -->
     <style>
 :root{--primary:#6495ED;--primary-light:#6495ED;--secondary:#E6F2FF;--dark:#333;--darker:#1a1a1a;--light:#fff;--gray:#e0e0e0;--gray-dark:#6b6b6b;--shadow:0 2px 10px rgba(0,0,0,0.05);--shadow-light:0 1px 3px rgba(0,0,0,0.03);--border:#e0e0e0}*{margin:0;padding:0;box-sizing:border-box;font-family:'M PLUS Rounded 1c','Kosugi Maru','Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased}body{background-color:var(--light);color:var(--dark);line-height:1.7;font-weight:400;font-size:15px}h1,h2,h3,h4,h5,h6{font-family:'M PLUS Rounded 1c','Kosugi Maru','Noto Serif JP',serif;font-weight:500;line-height:1.3}p{margin-bottom:1em}header{background-color:var(--light);padding:15px 0;position:fixed;width:100%;top:0;z-index:1000;border-bottom:1px solid rgba(0,0,0,0.05)}.container{max-width:1240px;margin:0 auto;padding:0 20px}.header-top{display:flex;justify-content:space-between;align-items:center}.logo{display:flex;align-items:center}.logo h1{font-size:22px;color:var(--dark);display:flex;align-items:center;letter-spacing:0.5px}.logo img{height:36px;margin-right:12px;width:auto}.hero{background-color:#f8f6f2;padding:100px 0 80px;margin-top:80px;text-align:center}.hero-content{max-width:700px;margin:0 auto}.launch-date{display:inline-block;color:var(--primary);font-size:16px;font-weight:500;margin-bottom:25px;letter-spacing:0.5px;background-color:transparent;padding:0;border-bottom:2px solid var(--primary);padding-bottom:4px}.hero h2{font-size:40px;margin-bottom:25px;line-height:1.4;color:var(--darker)}.hero p{font-size:18px;margin-bottom:30px;color:var(--gray-dark);line-height:1.8}.hero-message{max-width:700px;margin:0 auto 30px}.feature-list{list-style:none;padding:0;margin:0;text-align:left;display:inline-block;margin:0 auto}.feature-item{margin-bottom:12px;display:flex;align-items:flex-start;text-align:left}.feature-item:last-child{margin-bottom:0}.check-icon{color:#6495ED;font-size:18px;margin-right:15px;display:inline-flex;align-items:center;justify-content:center;font-weight:500;min-width:20px}.feature-text{font-size:18px;color:var(--gray-dark);line-height:1.4}.cta-button{display:inline-block;padding:12px 30px;background-color:var(--primary);color:white;text-decoration:none;font-weight:500;font-size:16px;transition:background-color 0.3s ease;margin-top:20px}.cta-button:hover{background-color:var(--primary-light)}
+
+/* 新增加的Campaign Banner样式 */
+.campaign-banner {
+  background-color: #f7f7f7;
+  color: #5078c9;
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border: 2px dashed #6495ED;
+}
+
+/* 其他样式与方案1相同 */
+
+.campaign-title {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.campaign-subtitle {
+  display: block;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.campaign-button {
+  background-color: #6495ED;
+  color: white;
+  padding: 10px 25px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.campaign-button:hover {
+  background-color: #5078c9;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(100,149,237,0.3);
+}
     </style>
     
     <!-- 非关键CSS延迟加载 -->
@@ -75,7 +121,8 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="launch-date">先行登録特典実施中～仲介手数料最大無料キャンペーン～</span>
+
+                
                 <h2>ここからはじまる<br>ウチの子とうららか暮らし</h2>
                 
                 <div class="hero-message">
@@ -94,9 +141,14 @@
                         </li>
                     </ul>
                 </div>
-    
-                <a href="#newsletter" class="cta-button">先行登録受付中</a>
-            </div>
+                    <!-- 改进的Campaign Banner -->
+                    <div class="campaign-banner">
+                        <div class="campaign-info">
+                          <span class="campaign-title">先着50名様限定</span>
+                          <span class="campaign-subtitle">仲介手数料最大無料キャンペーン</span>
+                        </div>
+                        <a href="#newsletter" class="campaign-button">今すぐ特典に申し込む</a>
+                      </div>
         </div>
     </section>
 
@@ -243,18 +295,18 @@
     <section class="newsletter" id="newsletter">
         <div class="container">
             <div class="newsletter-content">
-                <h2>サイト公開をお知らせします</h2>
-                <p>メールアドレスをご登録いただくと、サイト公開時にいち早くお知らせします。また、先行登録の方には、仲介手数料最大無料で物件をご紹介します</p>
+                <h2>特典付き先行登録受付中</h2>
+                <p>メールアドレスをご登録いただくと、<span style="color: #6495ED; font-weight: 500;">仲介手数料最大無料</span>の特典が受けられます。また、新着物件情報をいち早くお届けし、優先的にご案内します。</p>
                 
                 <form class="newsletter-form" id="subscription-form" name="newsletter-subscription" method="POST" data-netlify="true">
                     <input type="hidden" name="form-name" value="newsletter-subscription">
                     <input type="email" name="email" placeholder="メールアドレスを入力" required>
-                    <button type="submit">登録する</button>
+                    <button type="submit">今すぐ登録する</button>
                 </form>
                 
                 <div class="thank-you" id="thank-you">
                     <h3>ありがとうございます！</h3>
-                    <p>登録が完了しました。サイト公開時にご連絡いたします。</p>
+                    <p>登録が完了しました。特典の詳細とサービス開始のご案内を順次お送りします。</p>
                 </div>
             </div>
         </div>
