@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物件検索 | ULALA - ペット可賃貸情報サイト</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <h1>
+                        <img src="assets/images/ulala-logo.png" alt="ULALAロゴ">
+                        ULALA | ペットフレンドリー物件専門情報サイト
+                    </h1>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">ホーム</a></li>
+                        <li><a href="search.html" class="active">お部屋案内</a></li>
+                        <li><a href="articles.html">うららかノート</a></li>
+                        <li><a href="about.html">ULALAについて</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main>
+        <div class="container">
+            <!-- 页面标题 -->
+            <div class="page-header">
+                <h2>京都のペット可物件を探す</h2>
+                <p>お気に入りのタグをクリックして、理想の住まいを見つけましょう</p>
+            </div>
+
+            <!-- 标签筛选区域 -->
+            <div class="tag-filter-container">
+                <div class="filter-section">
+                    <h3>エリア</h3>
+                    <div class="tags">
+                        <span class="tag" data-filter="area" data-value="北区">北区</span>
+                        <span class="tag" data-filter="area" data-value="上京区">上京区</span>
+                        <span class="tag" data-filter="area" data-value="左京区">左京区</span>
+                        <span class="tag" data-filter="area" data-value="中京区">中京区</span>
+                        <span class="tag" data-filter="area" data-value="東山区">東山区</span>
+                        <span class="tag" data-filter="area" data-value="下京区">下京区</span>
+                        <span class="tag" data-filter="area" data-value="南区">南区</span>
+                        <span class="tag" data-filter="area" data-value="右京区">右京区</span>
+                        <span class="tag" data-filter="area" data-value="伏見区">伏見区</span>
+                        <span class="tag" data-filter="area" data-value="山科区">山科区</span>
+                        <span class="tag" data-filter="area" data-value="西京区">西京区</span>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>ペットタイプ</h3>
+                    <div class="tags">
+                        <span class="tag" data-filter="pet" data-value="小型犬">小型犬</span>
+                        <span class="tag" data-filter="pet" data-value="中型犬">中型犬</span>
+                        <span class="tag" data-filter="pet" data-value="大型犬">大型犬</span>
+                        <span class="tag" data-filter="pet" data-value="猫">猫</span>
+                        <span class="tag" data-filter="pet" data-value="小動物">小動物</span>
+                        <span class="tag" data-filter="pet" data-value="鳥類">鳥類</span>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>家賃</h3>
+                    <div class="tags">
+                        <span class="tag" data-filter="price" data-value="~50000">~5万円</span>
+                        <span class="tag" data-filter="price" data-value="50000-70000">5万円~7万円</span>
+                        <span class="tag" data-filter="price" data-value="70000-100000">7万円~10万円</span>
+                        <span class="tag" data-filter="price" data-value="100000-">10万円~</span>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>特徴・設備</h3>
+                    <div class="tags">
+                        <span class="tag" data-filter="feature" data-value="ペット足洗い場">ペット足洗い場</span>
+                        <span class="tag" data-filter="feature" data-value="ドッグラン近く">ドッグラン近く</span>
+                        <span class="tag" data-filter="feature" data-value="動物病院近く">動物病院近く</span>
+                        <span class="tag" data-filter="feature" data-value="多頭飼い可">多頭飼い可</span>
+                        <span class="tag" data-filter="feature" data-value="庭付き">庭付き</span>
+                    </div>
+                </div>
+
+                <!-- 已选择的标签 -->
+                <div class="selected-tags-container">
+                    <h3>選択中のタグ</h3>
+                    <div id="selected-tags">
+                        <!-- 选中的标签会显示在这里 -->
+                        <p class="no-tags-message">まだタグが選択されていません</p>
+                    </div>
+                    <button id="clear-tags" class="clear-btn">すべてクリア</button>
+                </div>
+            </div>
+
+            <!-- 筛选结果计数 -->
+            <div class="results-info">
+                <p><span id="result-count">12</span>件の物件が見つかりました</p>
+            </div>
+
+            <!-- 物件列表（博文形式） -->
+            <div class="property-list">
+                <!-- 物件1 -->
+                <article class="property-card" 
+                         data-area="山科区" 
+                         data-pet="小型犬,猫,小動物" 
+                         data-price="65000" 
+                         data-feature="動物病院近く,多頭飼い可">
+                    
+                    <div class="property-image">
+                        <img src="assets/images/sample-property1.jpg" alt="グリーンテラス山科">
+                        <div class="property-price">¥65,000</div>
+                    </div>
+                    
+                    <div class="property-content">
+                        <!-- 标签显示在标题上方 -->
+<!-- 修改文章中的标签结构，添加与筛选标签相同的数据属性 -->
+<div class="property-tags">
+    <span class="property-tag clickable" data-filter="area" data-value="山科区">山科区</span>
+    <span class="property-tag clickable" data-filter="pet" data-value="小型犬">小型犬OK</span>
+    <span class="property-tag clickable" data-filter="pet" data-value="猫">猫OK</span>
+    <span class="property-tag clickable" data-filter="pet" data-value="小動物">小動物OK</span>
+</div>
+                        
+                        <h3 class="property-title">グリーンテラス山科 - 緑豊かな環境でペットと暮らす</h3>
+                        
+                        <div class="property-meta">
+                            <span>1LDK</span>
+                            <span>45m²</span>
+                            <span>2階/5階建</span>
+                        </div>
+                        
+                        <p class="property-excerpt">
+                            山科区の閑静な住宅街に位置する、ペットフレンドリーなマンション。敷地内にはペット専用の足洗い場も完備。小型犬、猫、小動物との暮らしに最適な環境です。周辺には大きな公園や動物病院もあり、ペットとの生活に便利。室内は清潔感があり...
+                        </p>
+                        
+                        <div class="property-features">
+                            <span class="feature-icon">エレベーター</span>
+                            <span class="feature-icon">オートロック</span>
+                            <span class="feature-icon">ペット足洗い場</span>
+                        </div>
+                        
+                        <a href="property-detail.html?id=001" class="read-more-btn">詳細を見る</a>
+                    </div>
+                </article>
+
+                <!-- 物件2 -->
+                <article class="property-card" 
+                         data-area="右京区" 
+                         data-pet="中型犬" 
+                         data-price="85000" 
+                         data-feature="庭付き,ドッグラン近く">
+                    
+                    <div class="property-image">
+                        <img src="assets/images/sample-property2.jpg" alt="サンライズガーデン西院">
+                        <div class="property-price">¥85,000</div>
+                    </div>
+                    
+                    <div class="property-content">
+                        <div class="property-tags">
+                            <span class="property-tag">右京区</span>
+                            <span class="property-tag">中型犬OK</span>
+                            <span class="property-tag">庭付き</span>
+                        </div>
+                        
+                        <h3 class="property-title">サンライズガーデン西院 - 専用庭で愛犬と遊べる</h3>
+                        
+                        <div class="property-meta">
+                            <span>2DK</span>
+                            <span>50m²</span>
+                            <span>1階/3階建</span>
+                        </div>
+                        
+                        <p class="property-excerpt">
+                            右京区西院に位置する1階の庭付き物件。珍しい中型犬までOKの物件です。専用庭があるため、天気の良い日には愛犬と一緒に日向ぼっこを楽しめます。室内はフローリングでペットの足にも優しい素材を使用。近隣には大きな公園もあり...
+                        </p>
+                        
+                        <div class="property-features">
+                            <span class="feature-icon">庭付き</span>
+                            <span class="feature-icon">駐車場</span>
+                            <span class="feature-icon">ドッグラン徒歩10分</span>
+                        </div>
+                        
+                        <a href="property-detail.html?id=002" class="read-more-btn">詳細を見る</a>
+                    </div>
+                </article>
+
+                <!-- 物件3 -->
+                <article class="property-card" 
+                         data-area="下京区" 
+                         data-pet="猫" 
+                         data-price="55000" 
+                         data-feature="多頭飼い可,動物病院近く">
+                    
+                    <div class="property-image">
+                        <img src="assets/images/sample-property3.jpg" alt="キャットフレンドリー四条">
+                        <div class="property-price">¥55,000</div>
+                    </div>
+                    
+                    <div class="property-content">
+                        <div class="property-tags">
+                            <span class="property-tag">下京区</span>
+                            <span class="property-tag">猫OK</span>
+                            <span class="property-tag">多頭飼い可</span>
+                        </div>
+                        
+                        <h3 class="property-title">キャットフレンドリー四条 - 猫との都心暮らし</h3>
+                        
+                        <div class="property-meta">
+                            <span>1K</span>
+                            <span>30m²</span>
+                            <span>3階/6階建</span>
+                        </div>
+                        
+                        <p class="property-excerpt">
+                            下京区の便利な立地に位置する、猫と暮らすために設計された物件。猫の多頭飼いにも対応しています（最大3匹まで）。室内には猫用のキャットウォークや棚を設置可能な壁面があり、猫の快適な暮らしを考えた造りになっています...
+                        </p>
+                        
+                        <div class="property-features">
+                            <span class="feature-icon">エレベーター</span>
+                            <span class="feature-icon">オートロック</span>
+                            <span class="feature-icon">猫専門動物病院徒歩5分</span>
+                        </div>
+                        
+                        <a href="property-detail.html?id=003" class="read-more-btn">詳細を見る</a>
+                    </div>
+                </article>
+
+                <!-- 更多物件可以按照同样的结构添加 -->
+            </div>
+
+            <!-- 分页 -->
+            <div class="pagination">
+                <span class="page-item active">1</span>
+                <a href="#" class="page-item">2</a>
+                <a href="#" class="page-item">3</a>
+                <a href="#" class="page-item next">次へ &raquo;</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 底部信息 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">ULALA | ペットフレンドリー物件専門情報サイト</div>
+                <p>京都でペットと暮らせる賃貸物件を専門に扱うポータルサイトです。詳細なペット条件や周辺施設情報を掲載し、ペットオーナーの住まい探しをサポートします。</p>
+                <div class="contact-info">
+                    <p>メール：info@ulala.jp</p>
+                    <p>営業時間：10:00〜18:00</p>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 ULALA All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/property-filter.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+/* ========== 页眉页脚统一样式 ==========
+ * 使用说明：
+ * 1. 将此CSS文件保存到assets/css/header-footer.css
+ * 2. 在所有页面的<head>标签中添加引用:
+ *    <link rel="stylesheet" href="../assets/css/header-footer.css">
+ * 3. 对于首页，请使用:
+ *    <link rel="stylesheet" href="assets/css/header-footer.css">
+ */
+
+/* ----- 变量定义 ----- */
+:root {
+    --primary: #D98C8C;
+    --primary-light: #F9E8E8;
+    --primary-dark: #C77777;
+    --dark: #333333;
+    --darker: #1a1a1a;
+    --light: #ffffff;
+    --background: #F8F6F2;  /* 统一的浅米色背景 */
+    --gray: #e0e0e0;
+    --gray-dark: #6b6b6b;
+    --shadow: 0 2px 10px rgba(0,0,0,0.05);
+    --shadow-light: 0 1px 3px rgba(0,0,0,0.03);
+    --border: #e0e0e0;
+    --font-main: 'M PLUS Rounded 1c', sans-serif;
+    --font-story: 'Noto Serif JP', serif;
+}
+
+/* ----- 通用容器样式 ----- */
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 95%;
+}
+
+/* ----- 页眉样式 ----- */
+header {
+    background-color: var(--light);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-light);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 36px;
+    width: auto;
+    margin-right: 12px;
+}
+
+.logo-text {
+    font-size: 18px;  /* 稍微减小，在移动设备上更好显示 */
+    color: var(--dark);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* 导航菜单 */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav .nav-link {
+    text-decoration: none;
+    color: var(--dark);
+    padding: 8px 15px;
+    margin: 0 2px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+/* 当前导航项和悬停时的样式 - 只改变颜色，不使用背景 */
+.main-nav .nav-link:hover {
+    color: var(--primary);
+    /* 可以添加过渡效果让颜色变化更平滑 */
+    transition: color 0.3s ease;
+}
+
+.main-nav .nav-link.active {
+    color: var(--primary);
+    font-weight: 500;
+    /* 使用下划线而非背景色 */
+}
+
+/* 移动端菜单按钮 */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--dark);
+    padding: 5px;
+}
+
+/* ----- 页脚样式 ----- */
+footer {
+    background-color: var(--background);
+    padding: 40px 0;
+    margin-top: 60px;
+    border-top: 1px solid var(--gray);
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--darker);
+    margin-bottom: 15px;
+}
+
+.footer-content p {
+    color: var(--gray-dark);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    margin: 25px 0 15px;
+}
+
+.contact-info p {
+    font-size: 14px;
+    color: var(--gray-dark);
+    margin-bottom: 5px;
+}
+
+.copyright p {
+    font-size: 13px;
+    color: var(--gray-dark);
+    margin: 0;
+}
+
+/* ----- 响应式设计 ----- */
+@media (max-width: 992px) {
+    .logo-text {
+        font-size: 16px;
+    }
+    
+    .main-nav .nav-link {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .main-nav {
+        display: none;  /* 默认隐藏导航 */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--light);
+        box-shadow: var(--shadow);
+        z-index: 999;
+    }
+    
+    .main-nav.active {
+        display: block;  /* 当添加.active类时显示 */
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    
+    .main-nav .nav-link {
+        display: block;
+        padding: 12px 20px;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .logo-text {
+        font-size: 15px;
+        max-width: 220px; /* 移动端限制宽度 */
+    }
+    
+    /* 移动端页脚调整 */
+    footer {
+        padding: 30px 0;
+    }
+}
+
+/* ----- 移动端菜单JavaScript ----- */
+/* 
+// 将此JavaScript添加到页面底部或单独的JS文件中
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    
+    if(menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+        });
+    }
+});
+*/

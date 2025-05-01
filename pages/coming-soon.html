@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 优化 -->
+    <title>準備中 | もうしばらくお待ちください - ULALA ペット可賃貸情報</title>
+    <meta name="description" content="ULALAのこのセクションは現在準備中です。京都でペットと暮らせる賃貸物件の詳しい情報を近日公開予定です。">
+    <meta name="keywords" content="ULALA,ペット可,賃貸,京都,近日公開,準備中">
+    <meta http-equiv="content-language" content="ja">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="準備中 | ULALA ペット可賃貸情報">
+    <meta property="og:description" content="ULALAのこのセクションは現在準備中です。京都でペットと暮らせる賃貸物件の詳しい情報を近日公開予定です。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ulala.jp">
+    <meta property="og:image" content="https://ulala.jp/assets/images/og-image.jpg">
+    <meta property="og:site_name" content="ULALA">
+    
+    <!-- 字体加载 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- 引用统一的页眉页脚样式 (路径根据实际情况调整) -->
+    <link rel="stylesheet" href="../assets/css/header-footer.css">
+    
+    <link rel="canonical" href="https://ulala.jp/coming-soon.html" />
+    <link rel="icon" href="../assets/images/favicon.ico">
+    
+    <!-- Coming Soon页面特有样式 -->
+    <style>
+        :root {
+            --primary: #D98C8C;
+            --primary-light: #F9E8E8;
+            --primary-dark: #C77777;
+            --dark: #333333;
+            --darker: #1a1a1a;
+            --light: #ffffff;
+            --background: #F8F6F2;
+            --gray: #e0e0e0;
+            --gray-dark: #6b6b6b;
+            --shadow: 0 2px 10px rgba(0,0,0,0.05);
+            --shadow-light: 0 1px 3px rgba(0,0,0,0.03);
+            --border: #e0e0e0;
+            --font-main: 'M PLUS Rounded 1c', sans-serif;
+            --font-story: 'Noto Serif JP', serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            font-family: var(--font-main);
+            color: var(--dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* 为页眉留出空间 */
+        .coming-soon-content {
+            margin-top: 80px;
+            min-height: calc(100vh - 320px); /* 确保内容区域足够高 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .coming-soon-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 50px 40px;
+            box-shadow: var(--shadow-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 装饰元素 */
+        .coming-soon-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--primary);
+        }
+        
+        .coming-soon-icon {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .coming-soon-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .coming-soon-title {
+            font-size: 32px;
+            font-weight: 500;
+            color: var(--darker);
+            margin-bottom: 20px;
+            font-family: var(--font-story);
+        }
+        
+        .coming-soon-subtitle {
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 30px;
+            letter-spacing: 0.05em;
+        }
+        
+        .coming-soon-message {
+            max-width: 600px;
+            margin-bottom: 40px;
+            font-size: 16px;
+            color: var(--gray-dark);
+            line-height: 1.8;
+        }
+        
+        .coming-soon-message p {
+            margin-bottom: 15px;
+        }
+        
+        .coming-soon-message p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* 加入等待期的进度条 */
+        .progress-container {
+            width: 100%;
+            max-width: 400px;
+            height: 6px;
+            background-color: var(--primary-light);
+            border-radius: 3px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            width: 70%; /* 进度可调整 */
+            background-color: var(--primary);
+            border-radius: 3px;
+            animation: progress-animation 2s ease-in-out;
+        }
+        
+        @keyframes progress-animation {
+            from { width: 0; }
+            to { width: 70%; } /* 与上面的width保持一致 */
+        }
+        
+        /* 按钮样式 */
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .home-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: var(--light);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .home-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .notify-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--light);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--primary);
+        }
+        
+        .notify-button:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        /* 订阅表单 */
+        .notification-form {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 500px;
+            display: none; /* 默认隐藏 */
+            animation: fade-in 0.5s ease-out;
+        }
+        
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .form-group {
+            display: flex;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-light);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        
+        .form-group input {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: none;
+            font-size: 15px;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            background-color: #f9f9f9;
+        }
+        
+        .form-group button {
+            padding: 12px 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .form-group button:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .thank-you-message {
+            display: none;
+            color: var(--primary);
+            font-weight: 500;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: var(--primary-light);
+            border-radius: 4px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .coming-soon-container {
+                padding: 40px 20px;
+            }
+            
+            .coming-soon-title {
+                font-size: 26px;
+            }
+            
+            .coming-soon-subtitle {
+                font-size: 16px;
+            }
+            
+            .coming-soon-icon {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .home-button, .notify-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 页眉部分 (具体内容需根据实际情况调整路径) -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <img src="../assets/images/ulala-logo.png" alt="ULALAロゴ">
+                    <span class="logo-text">ULALA | ペットフレンドリー物件専門情報サイト</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html" class="nav-link">ホーム</a></li>
+                        <li><a href="../pages/coming-soon.html" class="nav-link">お部屋案内</a></li>
+                        <li><a href="../pages/coming-soon.html" class="nav-link">うららかノート</a></li>
+                        <li><a href="../pages/about.html" class="nav-link">ULALAについて</a></li>
+                        <li><a href="../pages/contact.html" class="nav-link">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+                <div class="menu-toggle">☰</div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Coming Soon 内容 -->
+    <div class="coming-soon-content">
+        <div class="coming-soon-container">
+
+            <h1 class="coming-soon-title">準備中です</h1>
+            <div class="coming-soon-subtitle">もうしばらくお待ちください</div>
+            
+            <div class="coming-soon-message">
+                <p>このページは現在準備中です。良いコンテンツをお届けするために、ペットとの理想の暮らしにふさわしい情報を丁寧に収集・整理しています。</p>
+                <p>完成までもう少しお待ちください。公開されましたらお知らせします。</p>
+            </div>
+            
+            <!-- 进度条 -->
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            
+            <!-- 按钮 -->
+            <div class="action-buttons">
+                <a href="../index.html" class="home-button">トップページへ戻る</a>
+                <button class="notify-button" id="show-notify-form">公開お知らせを受け取る</button>
+            </div>
+            
+            <!-- 订阅表单 -->
+            <div class="notification-form" id="notification-form">
+                <form name="notification-subscribe" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="notification-subscribe">
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="メールアドレスを入力" required>
+                        <button type="submit">登録する</button>
+                    </div>
+                </form>
+                <div class="thank-you-message" id="thank-you-message">
+                    ありがとうございます！公開時にお知らせいたします。
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 页脚部分 (具体内容需根据实际情况调整) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">ULALA | ペットフレンドリー物件専門情報サイト</div>
+                <p>京都でペットと暮らせる賃貸・売買物件を専門に扱うポータルサイトです。詳細なペット条件や周辺施設情報を掲載し、ペットオーナーの住まい探しをサポートします。</p>
+                <div class="contact-info">
+                    <p>メール：ulalaanimal@gmail.com</p>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 ULALA All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 脚本 -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 通知按钮点击事件
+        const notifyButton = document.getElementById('show-notify-form');
+        const notificationForm = document.getElementById('notification-form');
+        
+        if(notifyButton && notificationForm) {
+            notifyButton.addEventListener('click', function() {
+                notificationForm.style.display = 'block';
+                notifyButton.style.display = 'none';
+            });
+        }
+        
+        // 表单提交处理
+        const form = document.querySelector('form[name="notification-subscribe"]');
+        const thankYouMessage = document.getElementById('thank-you-message');
+        
+        if(form && thankYouMessage) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // 简单的表单验证
+                const email = form.querySelector('input[type="email"]').value;
+                if(!email || !email.includes('@')) {
+                    alert('有効なメールアドレスを入力してください。');
+                    return;
+                }
+                
+                // 提交表单（如果使用Netlify，此处可保留）
+                const formData = new FormData(form);
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(function(response) {
+                    if(response.ok) {
+                        form.style.display = 'none';
+                        thankYouMessage.style.display = 'block';
+                    } else {
+                        throw new Error('Network response was not ok.');
+                    }
+                })
+                .catch(function(error) {
+                    console.error('Error:', error);
+                    alert('エラーが発生しました。後でもう一度お試しください。');
+                });
+            });
+        }
+    });
+    </script>
+    
+    <!-- 移动端菜单脚本 -->
+    <script src="../assets/js/menu.js"></script>
+</body>
+</html>

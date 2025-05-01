@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 优化 -->
+    <title>京都のペット可物件分布特徴｜実データから見る住みやすいエリア | ULALA</title>
+    <meta name="description" content="京都のペット可物件の分布データを分析。南区が最も動物に優しく（28.1%）、左京区が最も厳しい（6.7%）という結果に。各区の特徴や選び方のポイントを解説。京都で愛犬・愛猫と住むなら必見の情報です。">
+    <meta name="keywords" content="京都,ペット可,賃貸,分布,南区,左京区,統計,犬,猫,物件,マンション,アパート,宠物友好,宠物可,京都租房">
+    
+    <!-- Open Graph (SNS分享) -->
+    <meta property="og:title" content="京都のペット可物件分布特徴｜実データから見る住みやすいエリア">
+    <meta property="og:description" content="京都のペット可物件の分布データを分析。南区が最も動物に優しく（28.1%）、左京区が最も厳しい（6.7%）という結果に。各区の特徴や選び方のポイントを解説。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ulala.jp/notes/kyoto-pet-friendly-areas">
+    <meta property="og:image" content="https://ulala.jp/assets/images/kyoto-pet-map.jpg">
+    <meta property="og:site_name" content="ULALA不動産">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
+    
+    <style>
+        :root {
+            --primary: #D98C8C;
+            --primary-light: #E4A9A9;
+            --primary-dark: #C27070;
+            --primary-ultra-light: #F9EFEF;
+            --accent: #8CD9B9;
+            --accent-light: #A9E4C9;
+            --text-dark: #333333;
+            --text-medium: #666666;
+            --text-light: #999999;
+            --background: #FFFFFF;
+            --background-light: #F9F6F6;
+            --border-light: #E9DADA;
+        }
+        
+        body {
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        
+        .article {
+            background-color: var(--background);
+            box-shadow: 0 5px 30px rgba(217, 140, 140, 0.07);
+            border-radius: 12px;
+            overflow: hidden;
+            padding-bottom: 40px;
+        }
+        
+        .article-header {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            padding: 60px 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0A10 10 0 1020 10 10 10 0 0010 0zm0 18a8 8 0 118-8 8 8 0 01-8 8z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 30px 30px;
+            opacity: 0.3;
+        }
+        
+        .article-header::after {
+            content: '🐾';
+            position: absolute;
+            font-size: 180px;
+            bottom: -40px;
+            right: -20px;
+            opacity: 0.07;
+            transform: rotate(-5deg);
+        }
+        
+        .article-title {
+            font-size: 32px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        
+        .article-meta {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .article-category {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            backdrop-filter: blur(5px);
+        }
+        
+        .article-date {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .article-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .author-name {
+            font-weight: 500;
+            font-size: 15px;
+        }
+        
+        .author-role {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .article-lead {
+            font-size: 18px;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 30px;
+            padding: 0 40px;
+        }
+        
+        .article-main-image {
+            margin: 0 40px 40px;
+        }
+        
+        .article-main-image figcaption {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .article section {
+            padding: 0 40px;
+            margin-bottom: 50px;
+        }
+        
+        .article section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-ultra-light);
+            position: relative;
+        }
+        
+        .article section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(217, 140, 140, 0.08);
+        }
+        
+        .data-table th, .data-table td {
+            padding: 14px 15px;
+            text-align: center;
+        }
+        
+        .data-table th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .data-table tr {
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .data-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background-color: var(--primary-ultra-light);
+        }
+        
+        .data-table tr:hover {
+            background-color: var(--primary-ultra-light);
+        }
+        
+        .highlight-row {
+            background-color: var(--primary-ultra-light) !important;
+        }
+        
+        .highlight-cell {
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .lowest-cell {
+            color: #ff6b6b;
+            font-weight: 500;
+        }
+        
+        .kyoto-map {
+            max-width: 100%;
+            height: auto;
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 5px 30px rgba(217, 140, 140, 0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .kyoto-map:hover {
+            transform: scale(1.01);
+        }
+        
+        .chart {
+            margin: 30px 0;
+            background: var(--background);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 30px rgba(217, 140, 140, 0.07);
+            border: 1px solid var(--border-light);
+        }
+        
+        .chart h3 {
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .percentage-bar {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+        
+        .percentage-label {
+            width: 80px;
+            text-align: right;
+            padding-right: 15px;
+            font-weight: 500;
+            color: var(--text-medium);
+        }
+        
+        .bar-container {
+            flex-grow: 1;
+            background-color: var(--primary-ultra-light);
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        .bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            border-radius: 10px;
+            position: relative;
+            transition: width 1s ease-in-out;
+        }
+        
+        .bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(255, 255, 255, 0.2) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0.2) 75%,
+                transparent 75%,
+                transparent
+            );
+            background-size: 15px 15px;
+            animation: stripesAnimation 2s linear infinite;
+            opacity: 0.5;
+        }
+        
+        @keyframes stripesAnimation {
+            0% { background-position: 0 0; }
+            100% { background-position: 30px 0; }
+        }
+        
+        .percentage-value {
+            width: 60px;
+            text-align: left;
+            padding-left: 15px;
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+        
+        .area-card {
+            background: var(--background);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 5px 30px rgba(217, 140, 140, 0.07);
+            border: 1px solid var(--border-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .area-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: var(--primary-ultra-light);
+            border-radius: 0 0 0 100px;
+            z-index: 0;
+            opacity: 0.5;
+        }
+        
+        .area-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(217, 140, 140, 0.12);
+        }
+        
+        .area-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .area-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .area-feature {
+            background: var(--primary-ultra-light);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--primary-dark);
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(217, 140, 140, 0.05);
+        }
+        
+        .area-feature:hover {
+            background: var(--primary-light);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .recommend-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-left: 10px;
+            box-shadow: 0 2px 5px rgba(217, 140, 140, 0.2);
+        }
+        
+        .caution-badge {
+            display: inline-block;
+            background: #ff9966;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-left: 10px;
+            box-shadow: 0 2px 5px rgba(255, 153, 102, 0.2);
+        }
+        
+        .tip-box {
+            background: var(--primary-ultra-light);
+            border-left: 4px solid var(--primary);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+            position: relative;
+        }
+        
+        .tip-box::before {
+            content: '💡';
+            position: absolute;
+            left: -15px;
+            top: -10px;
+            background: var(--primary);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+        }
+        
+        .tip-box h4 {
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+            font-size: 18px;
+        }
+        
+        .tip-box p {
+            color: var(--text-medium);
+        }
+        
+        .article-navigation {
+            background: var(--background);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px;
+            box-shadow: 0 5px 30px rgba(217, 140, 140, 0.07);
+            border: 1px solid var(--border-light);
+            position: sticky;
+            top: 80px;
+        }
+        
+        .article-navigation h4 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: var(--primary-dark);
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .article-navigation h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 10px 15px;
+            background: var(--primary-ultra-light);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--primary-dark);
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .nav-link:hover {
+            background: white;
+            transform: translateX(5px);
+            border-left: 3px solid var(--primary);
+            box-shadow: 0 3px 10px rgba(217, 140, 140, 0.1);
+        }
+        
+        .conclusion-box {
+            background: var(--primary-ultra-light);
+            padding: 35px;
+            border-radius: 12px;
+            margin: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .conclusion-box::before {
+            content: '✨';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+        }
+        
+        .conclusion-box h3 {
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .conclusion-box h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .conclusion-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .conclusion-box ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .conclusion-box ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .article-header,
+        .article-lead,
+        .article-main-image,
+        .article section {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .article section {
+            animation-delay: 0.2s;
+        }
+        
+        @media (max-width: 768px) {
+            .article-header {
+                padding: 40px 20px;
+            }
+            
+            .article-title {
+                font-size: 26px;
+            }
+            
+            .article-lead,
+            .article section,
+            .article-main-image {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            .article-navigation,
+            .conclusion-box {
+                margin: 30px 20px;
+            }
+            
+            .data-table {
+                font-size: 13px;
+            }
+            
+            .data-table th, .data-table td {
+                padding: 8px 10px;
+            }
+            
+            .percentage-label {
+                width: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header and Navigation would go here -->
+    
+    <main class="article-content">
+        <div class="container">
+            <article class="article">
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category">エリア情報</span>
+                        <span class="article-date">2025年4月25日</span>
+                    </div>
+                    <h1 class="article-title">京都のペット可物件分布特徴<br><span class="subtitle">実データから見る住みやすいエリア</span></h1>
+                    <div class="article-author">
+                        <img src="../assets/images/author-avatar.jpg" alt="著者アバター" class="author-avatar">
+                        <div class="author-info">
+                            <span class="author-name">ULALA編集部</span>
+                            <span class="author-role">ペット住まい専門ライター</span>
+                        </div>
+                    </div>
+                </header>
+                
+                <div class="article-navigation">
+                    <h4>目次</h4>
+                    <div class="nav-links">
+                        <a href="#overview" class="nav-link">京都全体のペット可物件状況</a>
+                        <a href="#area-ranking" class="nav-link">区域別ペット友好度ランキング</a>
+                        <a href="#south-area" class="nav-link">南区：京都最大のペット友好エリア</a>
+                        <a href="#central-areas" class="nav-link">下京区・右京区：中心部の選択肢</a>
+                        <a href="#east-areas" class="nav-link">山科区・伏見区：東部の穴場エリア</a>
+                        <a href="#low-areas" class="nav-link">左京区：なぜペット可物件が少ないのか</a>
+                        <a href="#selection-tips" class="nav-link">物件選びのポイント</a>
+                    </div>
+                </div>
+
+                <div class="article-lead">
+                    <p>「京都でペット可の物件を探すのは難しい」と言われていますが、実際のところはどうなのでしょうか？本記事では、2025年4月16日時点にSummoに掲載されている京都市内の約41万件の賃貸物件データを分析し、ペット可物件の分布状況を明らかにします。どの区域がペットと暮らしやすいのか、またその理由は何か、データと実地調査に基づいてご紹介します。</p>
+                </div>
+                
+                <figure class="article-main-image">
+                    <img src="../assets/images/kyoto-pet-map.jpg" alt="京都市ペット可物件分布マップ" class="kyoto-map">
+                    <figcaption>京都市ペット可物件分布マップ（色が濃いほどペット友好度が高い）</figcaption>
+                </figure>
+                
+                <section id="overview">
+                    <h2>京都全体のペット可物件状況</h2>
+                    <p>京都市内の賃貸物件について、ペット可物件の割合を調査した結果、全体では<strong>14.5%</strong>の物件がペット飼育を許可していることがわかりました。これは全国平均とほぼ同等の数値ですが、区域によって大きな差があります。</p>
+                    
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>エリア</th>
+                                    <th>総物件数</th>
+                                    <th>ペット可物件数</th>
+                                    <th>ペット友好比率</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>京都市全体</td>
+                                    <td>412,897</td>
+                                    <td>59,751</td>
+                                    <td class="highlight-cell">14.5%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <p>注目すべきは区域による違いです。最もペット友好度が高い南区では<strong>28.1%</strong>の物件がペット可であるのに対し、最も厳しい左京区ではわずか<strong>6.7%</strong>と、4倍以上の開きがあります。</p>
+                    
+                    <div class="tip-box">
+                        <h4>数字からわかること</h4>
+                        <p>全体の約15%がペット可ということは、平均して7件の物件を見れば1件はペット可物件に出会える計算になります。しかし区域によって状況は大きく異なるため、エリア選びが重要です。</p>
+                    </div>
+                </section>
+                
+                <section id="area-ranking">
+                    <h2>区域別ペット友好度ランキング</h2>
+                    <p>京都の11の行政区を、ペット可物件の比率で順位付けしました。</p>
+                    
+                    <div class="chart">
+                        <h3>ペット可物件比率ランキング</h3>
+                        
+                        <div class="percentage-bar">
+                            <div class="percentage-label">南区</div>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 28.1%;"></div>
+                            </div>
+                            <div class="percentage-value">28.1%</div>
+                        </div>
+                        
+                        <div class="percentage-bar">
+                            <div class="percentage-label">下京区</div>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 17.9%;"></div>
+                            </div>
+                            <div class="percentage-value">17.9%</div>
+                        </div>
+                        
+                        <div class="percentage-bar">
+                            <div class="percentage-label">右京区</div>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 16.2%;"></div>
+                            </div>
+                            <div class="percentage-value">16.2%</div>
+                        </div>
+                        
+                        <div class="percentage-bar">
+                            <div class="percentage-label">伏見区</div>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 15.0%;"></div>
+                            </div>
+                            <div class="percentage-value">15.0%</div>
+                        </div>
+                        
+                        <div class="percentage-bar">
+                            <div class="percentage-label">山科区</div>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 13.9%;"></div>
+                            </div>
+                            <div class="percentage-value">13.9%</div>
+                        </div>
+                        
+                        <div class="percentage-bar">
+                            <div class="percentage-label">中京区</div>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 12.9%;"></div>
+                            </div>
+                            <div class="percentage-value">12.9%</div>
+                        </div>
+                        
+                        <div class="percentage-bar">
+                            <div class="percentage-label">北区</div>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 11.5%;"></div>
+                            </div>
+                            <div class="percentage-value">11.5%</div>
+                        </div>
+                        
+                        <div class="percentage-bar">
+                            <div class="percentage-label">東山区</div>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 11.2%;"></div>
+                            </div>
+                            <div class="percentage-value">11.2%</div>
+                        </div>
+                        
+                        <div class="percentage-bar">
+                            <div class="percentage-label">上京区</div>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 10.8%;"></div>
+                            </div>
+                            <div class="percentage-value">10.8%</div>
+                        </div>
+                        
+                        <div class="percentage-bar">
+                            <div class="percentage-label">西京区</div>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 10.6%;"></div>
+                            </div>
+                            <div class="percentage-value">10.6%</div>
+                        </div>
+                        
+                        <div class="percentage-bar">
+                            <div class="percentage-label">左京区</div>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 6.7%;"></div>
+                            </div>
+                            <div class="percentage-value">6.7%</div>
+                        </div>
+                    </div>
+                    
+                    <p>この結果から、大きく4つのグループに分けられます：</p>
+                    <ul>
+                        <li><strong>ペット友好度特高エリア</strong>：南区（28.1%）</li>
+                        <li><strong>ペット友好度高エリア</strong>：下京区（17.9%）、右京区（16.2%）、伏見区（15.0%）</li>
+                        <li><strong>ペット友好度中エリア</strong>：山科区（13.9%）〜西京区（10.6%）</li>
+                        <li><strong>ペット友好度低エリア</strong>：左京区（6.7%）</li>
+                    </ul>
+                    
+                    <p>それでは、主要な区域の特徴を詳しく見ていきましょう。</p>
+                </section>
+                
+                <section id="south-area">
+                    <h2>南区：京都最大のペット友好エリア</h2>
+                    
+                    <div class="area-card">
+                        <h3>南区 <span class="recommend-badge">最もペット友好的</span></h3>
+                        <p>ペット可物件比率：<strong class="highlight-cell">28.1%</strong>（京都市平均の約2倍）</p>
+                        <p>南区がペット友好度で突出している理由は、比較的新しい物件が多く、また広い敷地を確保できる低層マンションや一戸建てが多いことが挙げられます。東西を鴨川と桂川に挟まれた地域では、緑地も多く、ペットの散歩環境も良好です。</p>
+                        
+                        <div class="area-features">
+                            <span class="area-feature">新築物件多い</span>
+                            <span class="area-feature">低層マンション</span>
+                            <span class="area-feature">一戸建て多い</span>
+                            <span class="area-feature">緑地・公園充実</span>
+                            <span class="area-feature">動物病院数多い</span>
+                        </div>
+                    </div>
+                    
+                    <p>南区内でも特に十条駅や東寺駅周辺は、ペット可物件の密集度が高いエリアです。マンションには「ペット足洗い場」や「ドッグラン」などの設備を備えた物件も見られます。中型犬や多頭飼いが可能な物件も他区より多い傾向にあります。</p>
+                    
+                    <div class="tip-box">
+                        <h4>南区でのペット暮らしのポイント</h4>
+                        <p>南区は市の南部に位置し、京都市内の中でも比較的新しい住宅地です。ペット可物件の選択肢が多いだけでなく、近年は大型ショッピングモールや公園も整備され、生活利便性も高まっています。東寺や九条など歴史的スポットもあり、京都らしい暮らしも楽しめます。</p>
+                    </div>
+                </section>
+                
+                <section id="central-areas">
+                    <h2>下京区・右京区：中心部の選択肢</h2>
+                    
+                    <div class="area-card">
+                        <h3>下京区</h3>
+                        <p>ペット可物件比率：<strong>17.9%</strong>（京都市内2位）</p>
+                        <p>京都駅周辺を含む下京区は、中心部でありながら比較的ペット可物件が多いエリアです。特に五条駅西側や西大路周辺には、リノベーション物件を中心にペット可の住まいが増えています。</p>
+                        
+                        <div class="area-features">
+                            <span class="area-feature">アクセス良好</span>
+                            <span class="area-feature">リノベ物件多い</span>
+                            <span class="area-feature">小型犬向け中心</span>
+                            <span class="area-feature">飲食店徒歩圏内</span>
+                        </div>
+                    </div>
+                    
+                    <div class="area-card">
+                        <h3>右京区</h3>
+                        <p>ペット可物件比率：<strong>16.2%</strong>（京都市内3位）</p>
+                        <p>嵐山や嵯峨野など自然豊かなエリアを含む右京区も、ペット友好度が高い地域です。特に太秦や西院周辺には、庭付き一戸建てや低層マンションを中心にペット可物件が点在しています。</p>
+                        
+                        <div class="area-features">
+                            <span class="area-feature">自然環境良好</span>
+                            <span class="area-feature">庭付き物件多い</span>
+                            <span class="area-feature">中型犬可も多め</span>
+                            <span class="area-feature">散歩コース充実</span>
+                        </div>
+                    </div>
+                    
+                    <p>下京区と右京区は、京都の中心部に近いながらもペット可物件の割合が比較的高く、仕事や学校との両立を考えるペットオーナーにとって魅力的な選択肢となっています。下京区は小型犬や猫向けのコンパクトな物件が多いのに対し、右京区では中型犬も飼えるより広めの物件が見つかりやすい傾向があります。</p>
+                </section>
+                
+                <section id="east-areas">
+                    <h2>山科区・伏見区：東部の穴場エリア</h2>
+                    
+                    <div class="area-card">
+                        <h3>山科区</h3>
+                        <p>ペット可物件比率：<strong>13.9%</strong></p>
+                        <p>山科区は京都市の東部に位置し、比較的新しい住宅地が多いエリアです。特に山科駅周辺では、2000年以降に建てられたペット共生型マンションも見られます。自然も多く、散歩環境も良好です。</p>
+                        
+                        <div class="area-features">
+                            <span class="area-feature">新築率高め</span>
+                            <span class="area-feature">ペット専用設備あり</span>
+                            <span class="area-feature">家賃相場やや安め</span>
+                            <span class="area-feature">動物病院充実</span>
+                        </div>
+                    </div>
+                    
+                    <div class="area-card">
+                        <h3>伏見区</h3>
+                        <p>ペット可物件比率：<strong>15.0%</strong></p>
+                        <p>伏見区は京都市で最も広い区域で、地域によって特性が大きく異なります。特に桃山や墨染周辺は、緑が多く静かな住環境とペット可物件が両立しているエリアです。</p>
+                        
+                        <div class="area-features">
+                            <span class="area-feature">一戸建て多い</span>
+                            <span class="area-feature">公園・緑地充実</span>
+                            <span class="area-feature">中型犬可多め</span>
+                            <span class="area-feature">家賃相場低め</span>
+                        </div>
+                    </div>
+                    
+                    <p>山科区と伏見区は、京都市の平均をやや上回るペット友好度を持ちながら、家賃相場は比較的リーズナブルなことが特徴です。特に伏見区の深草・桃山エリアは、緑豊かな環境と中型犬可の物件が見つかりやすい点で、大型のペットを飼っている方におすすめです。</p>
+                </section>
+                
+                <section id="low-areas">
+                    <h2>左京区：なぜペット可物件が少ないのか</h2>
+                    
+                    <div class="area-card">
+                        <h3>左京区 <span class="caution-badge">最もペット制限的</span></h3>
+                        <p>ペット可物件比率：<strong class="lowest-cell">6.7%</strong>（京都市平均の半分以下）</p>
+                        <p>左京区がペット可物件の割合が最も低い理由として、以下の要因が考えられます：</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li>京都大学など学生向け物件が多く、短期入居を前提とした物件が多い</li>
+                            <li>比較的古い木造アパートが多く、防音や設備面でペット飼育に適さない</li>
+                            <li>歴史的な町並みが多く、建物の保存状態を重視する傾向がある</li>
+                        </ul>
+                        
+                        <div class="area-features">
+                            <span class="area-feature">学生向け物件多い</span>
+                            <span class="area-feature">古い木造建築多い</span>
+                            <span class="area-feature">歴史的町並み</span>
+                            <span class="area-feature">観光地近接</span>
+                        </div>
+                    </div>
+                    
+                    <p>左京区内でも、比叡山麓や高野、松ヶ崎など北部エリアには一部ペット可の戸建て物件があります。また、修学院や一乗寺など比較的新しい住宅地にはペット可マンションも見られますが、全体的に選択肢は限られています。</p>
+                    
+                    <div class="tip-box">
+                        <h4>左京区でペットと暮らすには</h4>
+                        <p>左京区でペットと暮らしたい場合は、早めの物件探しと柔軟な条件設定が重要です。また、「相談可」の物件では、飼育中のペットの種類や大きさ、これまでの飼育歴などをアピールすることで、許可が得られるケースもあります。</p>
+                    </div>
+                </section>
+                
+                <section id="selection-tips">
+                    <h2>物件選びのポイント</h2>
+                    
+                    <p>京都でペットと暮らす物件を探す際のポイントをまとめました：</p>
+                    
+                    <ol>
+                        <li><strong>エリア選びを慎重に</strong>：データが示す通り、区域によって選択肢の数が大きく変わります。南区や下京区などペット友好度の高いエリアを優先的に検討しましょう。</li>
+                        <li><strong>「ペット相談可」の物件も視野に</strong>：明確に「ペット可」と表示されている物件だけでなく、「相談可」の物件も積極的に問い合わせてみましょう。小型犬や猫、小動物であれば許可が出るケースも多いです。</li>
+                        <li><strong>新築・築浅物件を優先</strong>：データ分析から、築10年以内の物件はペット可である割合が高い傾向にあります。特に「ペット共生型」をうたう物件には、足洗い場やペット対応フローリングなどの設備が整っていることも。</li>
+                        <li><strong>周辺環境も確認</strong>：物件自体がペット可でも、周辺に動物病院や公園がなければ生活に不便です。特に夜間対応の動物病院の有無は重要なチェックポイントです。</li>
+                        <li><strong>管理規約の確認を忘れずに</strong>：「ペット可」と表示されていても、体重制限や犬種制限、頭数制限がある場合があります。契約前に必ず詳細を確認しましょう。</li>
+                    </ol>
+                    
+                    <div class="tip-box">
+                        <h4>うららか編集部からのアドバイス</h4>
+                        <p>物件探しでは「ペット可」の表示だけでなく、実際に周辺を歩いてみることをおすすめします。同じエリアで犬の散歩をしている方を見かけるかどうかは、そのエリアのペット友好度を測る良い指標になります。また、日中と夜間で周辺の騒音環境が変わることもあるので、可能であれば複数の時間帯に訪れてみましょう。</p>
+                    </div>
+                </section>
+                
+                <div class="conclusion-box">
+                    <h3>まとめ：京都のペット可物件分布データから見えるもの</h3>
+                    <p>京都市内のペット可物件の分布状況を分析した結果、以下のことが明らかになりました：</p>
+                    <ul>
+                        <li>京都市全体では約14.5%の物件がペット飼育可能</li>
+                        <li>南区が最もペット友好的で、物件の28.1%がペット可</li>
+                        <li>左京区は最も制限的で、物件の6.7%しかペット可ではない</li>
+                        <li>新しい住宅地や一戸建てが多いエリアほど、ペット可物件の割合が高い</li>
+                        <li>ペット可物件を効率的に探すには、エリア選びが重要</li>
+                    </ul>
+                    <p>京都でペットと快適に暮らせる住まいを見つけるためには、統計データを参考にしながらも、実際に足を運び、周辺環境も含めて総合的に判断することが大切です。ULALAでは今後も、エリア別のより詳細な情報や、実際にペットと暮らしている方々の体験談などを提供していく予定です。</p>
+                </div>
+                
+                <div class="article-share">
+                    <p>この記事は役に立ちましたか？シェアして広めましょう！</p>
+                    <div class="share-buttons">
+                        <a href="#" class="share-button twitter">Twitter</a>
+                        <a href="#" class="share-button facebook">Facebook</a>
+                        <a href="#" class="share-button line">LINE</a>
+                    </div>
+                </div>
+                
+                <div class="related-articles">
+                    <h3>関連記事</h3>
+                    <div class="related-article-list">
+                        <a href="../notes/pet-friendly-renovation.html" class="related-article-item">
+                            <img src="../assets/images/pet-renovation-thumb.jpg" alt="ペット対応リノベーション" class="related-article-image">
+                            <div class="related-article-info">
+                                <h4>ペットと快適に暮らすためのリノベーションアイデア</h4>
+                                <p>猫と犬の特性に合わせた住まいの工夫や、おすすめの床材・壁材を紹介。</p>
+                            </div>
+                        </a>
+                        <a href="../notes/south-area-guide.html" class="related-article-item">
+                            <img src="../assets/images/south-area-thumb.jpg" alt="南区エリアガイド" class="related-article-image">
+                            <div class="related-article-info">
+                                <h4>ペットとの暮らしにおすすめ！南区の魅力を徹底解剖</h4>
+                                <p>京都市内最大のペット友好エリア、南区の住みやすさや散歩スポットを紹介。</p>
+                            </div>
+                        </a>
+                        <a href="../notes/kyoto-pet-shops.html" class="related-article-item">
+                            <img src="../assets/images/pet-shop-thumb.jpg" alt="京都のペットショップ" class="related-article-image">
+                            <div class="related-article-info">
+                                <h4>京都でおすすめのペットショップ＆トリミングサロン10選</h4>
+                                <p>地元で愛される名店から、最新設備を備えた大型店まで、エリア別に紹介。</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </article>
+            
+            <aside class="article-sidebar">
+                <div class="author-profile">
+                    <img src="../assets/images/author-avatar.jpg" alt="著者アバター" class="author-avatar">
+                    <h3>ULALA編集部</h3>
+                    <p>京都のペット可物件専門メディア「ULALA」の編集チーム。実際に現地を歩いて収集した情報と、データ分析を組み合わせた記事を発信しています。</p>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>人気記事</h3>
+                    <ul class="popular-posts">
+                        <li><a href="../notes/pet-friendly-areas.html">【2025年最新】京都市内でペットと住みやすい地域ランキング</a></li>
+                        <li><a href="../notes/dog-walking-spots.html">地元民おすすめ！京都の穴場ドッグウォーキングコース5選</a></li>
+                        <li><a href="../notes/cat-friendly-apartments.html">猫と暮らすための間取り選びのポイント</a></li>
+                        <li><a href="../notes/pet-contract-tips.html">ペット可物件の契約時に確認すべき5つのこと</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>エリア情報</h3>
+                    <ul class="area-links">
+                        <li><a href="../area/south.html">南区</a></li>
+                        <li><a href="../area/shimogyo.html">下京区</a></li>
+                        <li><a href="../area/ukyo.html">右京区</a></li>
+                        <li><a href="../area/fushimi.html">伏見区</a></li>
+                        <li><a href="../area/yamashina.html">山科区</a></li>
+                        <li><a href="../area/all.html">全エリア一覧</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-cta">
+                    <h3>物件をお探しですか？</h3>
+                    <p>ULALAでは、京都市内のペット可物件を多数取り扱っています。希望条件を教えていただければ、最適な物件をご紹介します。</p>
+                    <a href="../contact.html" class="cta-button">無料相談する</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">ULALA</div>
+                <p>京都でペットと暮らせる賃貸物件を専門に扱うポータルサイトです。詳細なペット条件や周辺施設情報を掲載し、ペットオーナーの住まい探しをサポートします。</p>
+                <div class="contact-info">
+                    <p>メール：info@ulala.jp</p>
+                    <p>営業時間：10:00〜18:00</p>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 ULALA All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for navigation links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Initialize share buttons (placeholder for actual sharing functionality)
+            document.querySelectorAll('.share-button').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const platform = this.classList[1];
+                    alert(`${platform}でシェアする機能は実装中です。`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
