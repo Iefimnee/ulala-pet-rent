@@ -1,6 +1,6 @@
 /* 基础样式设置 */
 :root {
-    --primary: #D98C8C; /* 矢车菊蓝 */
+    --primary: #b4cf9e; /* 矢车菊蓝 */
     --primary-light: #E6F2FF; /* 浅蓝色背景 */
     --secondary: #FFA000; /* 暖橙色，用于强调 */
     --dark: #333;
